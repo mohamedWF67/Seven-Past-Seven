@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448434e0041ce9844b80edfd479dc82b, type: 3}
+  m_Name: Racci Ult
+  m_EditorClassIdentifier: 
+  force: 10
+  damage: 100
+  range: 4
+  cooldown: 1
+  duration: 5
+  delayTime: 0.5
+  isStaticAbility: 1
+  tickRate: 0.5
+  isSticky: 0
+  canDamagePlayer: 0
+  canPathThroughWalls: 1
+  Intenisty: 1
+  delayffect: 0.5
+  sound: {fileID: 0}
+  icon: {fileID: -2817230481835795297, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
+  Effect: {fileID: 2167287150139604866, guid: 6761797f9ea9f934291f370a2675f687, type: 3}

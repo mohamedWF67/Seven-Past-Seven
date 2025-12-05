@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fc68e33ce99f64eaff2c2b832b5613, type: 3}
+  m_Name: Aira
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireRate: 0.5
+  speed: 10
+  destroyTime: 1
+  canPathThroughWalls: 1
+  canPathThroughEnemies: 1
+  bullet: {fileID: 6538914341348240533, guid: ad52dd979f2de7c48b751ee66019a90f, type: 3}
+  icon: {fileID: 893148557072781507, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
+  isLoopingAudio: 0
+  sound: {fileID: 0}

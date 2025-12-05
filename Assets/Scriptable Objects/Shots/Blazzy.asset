@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fc68e33ce99f64eaff2c2b832b5613, type: 3}
+  m_Name: Blazzy
+  m_EditorClassIdentifier: 
+  damage: 20
+  fireRate: 0.5
+  speed: 10
+  destroyTime: 1
+  canPathThroughAnything: 0
+  bullet: {fileID: 1517603443566993518, guid: 9ecba910e564ba840807d664d0f303e3, type: 3}
+  icon: {fileID: -2365764504964540382, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
+  isLoopingAudio: 0
+  sound: {fileID: 0}

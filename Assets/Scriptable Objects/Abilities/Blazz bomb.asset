@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448434e0041ce9844b80edfd479dc82b, type: 3}
+  m_Name: Blazz bomb
+  m_EditorClassIdentifier: 
+  force: 10
+  damage: 15
+  range: 4
+  cooldown: 1
+  duration: 1.5
+  delayTime: 1.5
+  isStaticAbility: 1
+  isSticky: 0
+  canDamagePlayer: 0
+  canPathThroughWalls: 0
+  Intenisty: 2
+  delayffect: 0
+  sound: {fileID: 0}
+  icon: {fileID: 2170279749749914347, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
+  Effect: {fileID: 2907014264342171849, guid: a447fe60c59d6c04d869f386cde5dccc, type: 3}

@@ -2,8 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Collectables
+  - Enemy
+  - Ground
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -11,12 +15,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Force
+  - Enemy
+  - projectil
+  - Collectables
   - 
   - 
   - 
@@ -41,3 +45,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 476202909
+    locked: 0
+  - name: Player
+    uniqueID: 1752165703
+    locked: 0
+  - name: Ground
+    uniqueID: 3036794177
+    locked: 0
+  - name: Effects
+    uniqueID: 3328457281
+    locked: 0
+  m_RenderingLayers:
+  - Default
