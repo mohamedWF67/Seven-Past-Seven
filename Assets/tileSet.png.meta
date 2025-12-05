@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: a1c7d073616048d40b7dd82b234d265e
+guid: 703799d692edec54caa67d322094b43f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1743849941933654463
-    second: HUD Menus_0
+      213: 7383082598571809250
+    second: tileSet_0
   - first:
-      213: 7291096671700317025
-    second: HUD Menus_1
+      213: -2035630990054192358
+    second: tileSet_1
   - first:
-      213: 8796641200209256626
-    second: HUD Menus_2
-  - first:
-      213: -595158496127015518
-    second: HUD Menus_3
-  - first:
-      213: 2096328871894934673
-    second: HUD Menus_4
-  - first:
-      213: -3558242265589027736
-    second: HUD Menus_5
-  - first:
-      213: 7431136118221613948
-    second: HUD Menus_6
-  - first:
-      213: 1132505472081091835
-    second: HUD Menus_7
+      213: 3787089330665375705
+    second: tileSet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,177 +106,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HUD Menus_0
+      name: tileSet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 267
-        height: 511
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 22, y: 22, z: 22, w: 21}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb18a8a6846633810800000000000000
-      internalID: 1743849941933654463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD Menus_1
-      rect:
-        serializedVersion: 2
-        x: 285
-        y: 279
-        width: 552
-        height: 328
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 22, y: 22, z: 21, w: 21}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 163fab30bcd2f2560800000000000000
-      internalID: 7291096671700317025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD Menus_2
-      rect:
-        serializedVersion: 2
-        x: 285
-        y: 111
-        width: 145
-        height: 151
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 22, y: 22, z: 22, w: 23}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b0e903a092f31a70800000000000000
-      internalID: 8796641200209256626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD Menus_3
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 111
-        width: 389
-        height: 151
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 23, y: 22, z: 21, w: 23}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a52b4540829db7f0800000000000000
-      internalID: -595158496127015518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD Menus_4
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 0
-        width: 87
-        height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 21, y: 21, z: 21, w: 21}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19461bd8008a71d10800000000000000
-      internalID: 2096328871894934673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD Menus_5
-      rect:
-        serializedVersion: 2
-        x: 392
-        y: 0
-        width: 89
-        height: 88
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86ce8c603859e9ec0800000000000000
-      internalID: -3558242265589027736
+      spriteID: 2e99d33918af57660800000000000000
+      internalID: 7383082598571809250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD Menus_6
+      name: tileSet_1
       rect:
         serializedVersion: 2
-        x: 499
-        y: 0
-        width: 89
-        height: 88
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7bac2c7de2b02760800000000000000
-      internalID: 7431136118221613948
+      spriteID: a1b0b08566cffb3e0800000000000000
+      internalID: -2035630990054192358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HUD Menus_7
+      name: tileSet_2
       rect:
         serializedVersion: 2
-        x: 606
-        y: 0
-        width: 89
-        height: 88
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfc54910ab777bf00800000000000000
-      internalID: 1132505472081091835
+      spriteID: 9d74bfe6ea17e8430800000000000000
+      internalID: 3787089330665375705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9614e52be5c06334f95185b5ce6a55bf
+      internalID: -1592344260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e17a196d13365499ee2a75d18bc47d
+      internalID: 636920771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05a5f22aac1591469f373bdcd68fdc3
+      internalID: -1094034345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6258aa7e671047e4f9d075b56b6c94d6
+      internalID: -1900819763
       vertices: []
       indices: 
       edges: []
@@ -300,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 284aa711ccd5e2447b01169f985ac5ae
+    spriteID: 34a6af8c0bd2d0442935aaae0e4471e4
     internalID: 0
     vertices: []
     indices: 
@@ -310,14 +273,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HUD Menus_0: 1743849941933654463
-      HUD Menus_1: 7291096671700317025
-      HUD Menus_2: 8796641200209256626
-      HUD Menus_3: -595158496127015518
-      HUD Menus_4: 2096328871894934673
-      HUD Menus_5: -3558242265589027736
-      HUD Menus_6: 7431136118221613948
-      HUD Menus_7: 1132505472081091835
+      tileSet_0: 7383082598571809250
+      tileSet_1: -2035630990054192358
+      tileSet_2: 3787089330665375705
+      tileSet_3: -1592344260
+      tileSet_4: 636920771
+      tileSet_5: -1094034345
+      tileSet_6: -1900819763
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

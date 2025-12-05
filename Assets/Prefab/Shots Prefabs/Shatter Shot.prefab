@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5610120128923600697}
   - component: {fileID: 1883970570755000846}
   - component: {fileID: 2771009989564974117}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shatter Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8406961100222261153}
   - component: {fileID: -1297307143863545710}
   - component: {fileID: -290262565280927622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sparking Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

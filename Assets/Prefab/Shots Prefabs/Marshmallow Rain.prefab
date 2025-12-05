@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5805078581392495861}
   - component: {fileID: 6425850174942406865}
   - component: {fileID: 8012562024450142426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Marshmallow Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

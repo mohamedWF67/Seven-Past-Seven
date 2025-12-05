@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9161437927636003527}
   - component: {fileID: 5756807075039011558}
   - component: {fileID: 225304124960711345}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spirit Push
   m_TagString: Untagged
   m_Icon: {fileID: 0}

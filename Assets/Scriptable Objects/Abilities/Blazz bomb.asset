@@ -18,7 +18,8 @@ MonoBehaviour:
   cooldown: 1
   duration: 1.5
   delayTime: 1.5
-  isStaticAbility: 1
+  isStaticAbility: 0
+  tickRate: 0.5
   isSticky: 0
   canDamagePlayer: 0
   canPathThroughWalls: 0

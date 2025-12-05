@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5204544548355586027}
   - component: {fileID: 2560671398915105977}
   - component: {fileID: 1306064829923357281}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Overcharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
