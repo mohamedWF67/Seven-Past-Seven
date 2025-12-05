@@ -441,8 +441,6 @@ public class PlayerMovementScript : MonoBehaviour
         //* Calculate the force required for the jump.
         float impulse = rb.mass * (v0 - rb.linearVelocity.y);
         rb.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
-        
-        Text1.text = impulse.ToString("0.00");
     }    
 
     #endregion
@@ -486,9 +484,6 @@ public class PlayerMovementScript : MonoBehaviour
         //* If the player switches direction add dust
         if (Mathf.Sign(rb.linearVelocity.normalized.x) != Mathf.Sign(_moveInput.normalized.x) && Mathf.Abs(rb.linearVelocityX) > 0.05f && isGrounded)
             CreateDustTrail();
-        
-        Text2.text = rb.linearVelocity.ToString();
-        Text3.text = rb.totalForce.ToString("0.00");
     }
     
     #endregion
