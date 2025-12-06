@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -240,7 +241,7 @@ public class HealthSystem : MonoBehaviour
         StartCoroutine(UpdateHealthUI());
     }
 
-    private void Kill()
+    public void Kill()
     {
         //* Kills the player.
         currentHearts = 0;
@@ -326,5 +327,21 @@ public class HealthSystem : MonoBehaviour
         currentHearts = maxHearts;
         this.enduranceModifier = enduranceModifier;
         StartCoroutine(UpdateHealthUI());
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Trigger Enter");
+        if (!isPlayer) return;
+
+        if (other.gameObject.CompareTag("Hazards"))
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector2.up * 50, ForceMode2D.Impulse);
+            Flash();
+            Kill();
+        }
+
+        
     }
 }

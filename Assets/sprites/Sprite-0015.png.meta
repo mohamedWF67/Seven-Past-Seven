@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0c1a2fbf0d6cdac48ad99ba25ddb0148
+guid: b68672999a0c43a4397c0c09d5f20ecd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1516580860433006690
-    second: tileSet 1_0
-  - first:
-      213: -5126615878363381391
-    second: tileSet 1_1
+      213: 3926320229673781502
+    second: Sprite-0015_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileSet 1_0
+      name: Sprite-0015_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 64
-        height: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,96 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9ffbbc1eb504fae0800000000000000
-      internalID: -1516580860433006690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileSet 1_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1710646450a9ad8b0800000000000000
-      internalID: -5126615878363381391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileSet 1_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abb31d4379d2b0943a7dbe0b5a2fae7c
-      internalID: -1607481025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileSet 1_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61a9e9f568f38fb4cbf41a32785aa38a
-      internalID: 1430475443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileSet 1_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eba4423b40f798547ae100dbc390a25d
-      internalID: -588332475
+      spriteID: ef8c22442771d7630800000000000000
+      internalID: 3926320229673781502
       vertices: []
       indices: 
       edges: []
@@ -216,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1dd868a915e32af479c346b33b92a093
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -226,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tileSet 1_0: -1516580860433006690
-      tileSet 1_1: -5126615878363381391
-      tileSet 1_2: -1607481025
-      tileSet 1_3: 1430475443
-      tileSet 1_4: -588332475
+      Sprite-0015_0: 3926320229673781502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -184,7 +184,6 @@ public class PlayerMovementScript : MonoBehaviour
 
     [Header("Experimentation")] 
     [SerializeField] private Animator playerAnimator;
-    [SerializeField] private float deadZone;
     public string currentControlScheme;
     #endregion
     
@@ -281,7 +280,7 @@ public class PlayerMovementScript : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         
         dustTrail = GetComponentInChildren<ParticleSystem>();
-        TR = GetComponent<TrailRenderer>();
+        TR = GetComponentInChildren<TrailRenderer>();
         sp = GetComponent<SpriteRenderer>();
     }
     
@@ -292,7 +291,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         updateActions();
         checkCollisions();
-        if (canMove)
+        if (canMove && !GameManagerScript.instance.inUI)
         {
             jump();
             Flip();
@@ -449,11 +448,9 @@ public class PlayerMovementScript : MonoBehaviour
    
     void FixedUpdate()
     {
-        if (canMove)
-        {
-            run();
+        if (canMove && !GameManagerScript.instance.inUI)
             dash();
-        }
+        run();
         fall();
     }
 
@@ -464,7 +461,11 @@ public class PlayerMovementScript : MonoBehaviour
     private void run()
     {
         //* End speed.
-        float targetSpeed = _moveInput.x * runMaxSpeed;
+        
+        float moveInputX = 0;
+        if (canMove && !GameManagerScript.instance.inUI)
+            moveInputX = _moveInput.x;
+        float targetSpeed = moveInputX * runMaxSpeed;
         
         #region Calcualte acceleration
 
@@ -480,7 +481,9 @@ public class PlayerMovementScript : MonoBehaviour
         if (dashing) return;
         //* Force needed to move player.
         float movement = speedDif * acceleration;
+
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+        
         //* If the player switches direction add dust
         if (Mathf.Sign(rb.linearVelocity.normalized.x) != Mathf.Sign(_moveInput.normalized.x) && Mathf.Abs(rb.linearVelocityX) > 0.05f && isGrounded)
             CreateDustTrail();

@@ -51,6 +51,13 @@ public class ShootingScript : MonoBehaviour
 
     private void Update()
     {
+        if (GameManagerScript.instance.inUI) return;
+        
+        ActionChecks();
+    }
+
+    private void ActionChecks()
+    {
         if (switchAbility.triggered && abilityCoroutine == null)
         {
             abilityCoroutine = StartCoroutine(PerformAbility());
