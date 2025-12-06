@@ -31,7 +31,7 @@ public class DialogueSystem : MonoBehaviour
         escapeBtn = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Exit");
     }
      
-    private void Update()
+    private void LateUpdate()
     {
         if (skipBtn.triggered && isInDialogue)
             NextLine();
@@ -95,11 +95,11 @@ public class DialogueSystem : MonoBehaviour
     public void CancelDialogue()
     {
         isInDialogue = false;
-        GameManagerScript.instance.inUI = false;
         StopAllCoroutines();
         dsBox.ResetDialogueSystem();
         lineIndex = 0;
         dialogueText.text = "";
         dialogueBox.SetActive(false);
+        GameManagerScript.instance.inUI = false;
     }
 }

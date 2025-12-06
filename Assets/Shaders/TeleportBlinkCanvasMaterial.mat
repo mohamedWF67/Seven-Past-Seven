@@ -56,7 +56,7 @@ Material:
     - _UIMaskSoftnessX: 1
     - _UIMaskSoftnessY: 1
     - _VignetteIntensity: 1.712
-    - _VignettePower: 0.433
+    - _VignettePower: 0.321
     m_Colors:
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

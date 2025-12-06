@@ -4,9 +4,11 @@ using UnityEngine;
 public class SoundFXManagerScript : MonoBehaviour
 {
     public static SoundFXManagerScript instance;
-    
-    [SerializeField] private AudioSource SoundSFXObject;
-    [SerializeField] private AudioSource SoundUIObject;
+
+    [SerializeField] private AudioClip backgroundMusic;
+    private AudioSource backgroundMusicSource;
+    [SerializeField] private AudioSource soundSFXObject;
+    [SerializeField] private AudioSource soundUIObject;
 
     private void Awake()
     {
@@ -18,11 +20,19 @@ public class SoundFXManagerScript : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        backgroundMusicSource = GetComponent<AudioSource>();
+        PlayBackgroundMusic();
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        backgroundMusicSource.clip = backgroundMusic;
+        backgroundMusicSource.Play();
     }
 
     public void PlaySFXSound(AudioClip clip, Transform transform, float volume = 1f)
     {
-        AudioSource audioSource = Instantiate(SoundSFXObject, transform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundSFXObject, transform.position, Quaternion.identity);
         
         audioSource.clip = clip;
         
@@ -37,7 +47,7 @@ public class SoundFXManagerScript : MonoBehaviour
     
     public void PlayUISound(AudioClip clip, float volume = 1f)
     {
-        AudioSource audioSource = Instantiate(SoundUIObject, transform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundUIObject, transform.position, Quaternion.identity);
         
         audioSource.clip = clip;
         

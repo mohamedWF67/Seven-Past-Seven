@@ -340,7 +340,5 @@ public class HealthSystem : MonoBehaviour
             Flash();
             Kill();
         }
-
-        
     }
 }
