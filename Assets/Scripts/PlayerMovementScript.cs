@@ -179,6 +179,12 @@ public class PlayerMovementScript : MonoBehaviour
     private SpriteRenderer sp;
  
     #endregion
+    
+    #region Audioclips
+    [Header("AudioClips")]
+    [SerializeField] AudioClip jumpClip;
+    [SerializeField] AudioClip dashClip;
+    #endregion
 
     #region EXPERIMENTATION
 
@@ -500,6 +506,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     IEnumerator doDash()
     {
+        SoundFXManagerScript.instance.PlaySFXSound(dashClip,transform);
+        
         dashFinished = false;
         dashing = true;
         

@@ -331,7 +331,6 @@ public class HealthSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Trigger Enter");
         if (!isPlayer) return;
 
         if (other.gameObject.CompareTag("Hazards"))

@@ -220,6 +220,8 @@ MonoBehaviour:
   fallLimit: 15
   useParticleEffects: 1
   useTrailRenderer: 1
+  jumpClip: {fileID: 0}
+  dashClip: {fileID: 8300000, guid: 6bb7a7d2b950c9544b78ccdb8b8c4d55, type: 3}
   playerAnimator: {fileID: 0}
   currentControlScheme: 
   Text1: {fileID: 0}
