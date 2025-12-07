@@ -323,6 +323,8 @@ public class HealthSystem : MonoBehaviour
 
     public void RefreshHealth( int maxHealth, int maxHearts, float enduranceModifier)
     {
+        this.maxHealth = maxHealth;
+        this.maxHearts = maxHearts;
         currentHealth = maxHealth;
         currentHearts = maxHearts;
         this.enduranceModifier = enduranceModifier;

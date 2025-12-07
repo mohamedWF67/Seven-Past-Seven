@@ -7,8 +7,8 @@ public class SoundFXManagerScript : MonoBehaviour
 
     [SerializeField] private AudioClip backgroundMusic;
     private AudioSource backgroundMusicSource;
-    [SerializeField] private AudioSource soundSFXObject;
-    [SerializeField] private AudioSource soundUIObject;
+    [SerializeField] private GameObject soundSFXObject;
+    [SerializeField] private GameObject soundUIObject;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class SoundFXManagerScript : MonoBehaviour
 
     public void PlaySFXSound(AudioClip clip, Transform transform, float volume = 1f)
     {
-        AudioSource audioSource = Instantiate(soundSFXObject, transform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundSFXObject, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         
         audioSource.clip = clip;
         
@@ -47,7 +47,7 @@ public class SoundFXManagerScript : MonoBehaviour
     
     public void PlayUISound(AudioClip clip, float volume = 1f)
     {
-        AudioSource audioSource = Instantiate(soundUIObject, transform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundUIObject, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         
         audioSource.clip = clip;
         

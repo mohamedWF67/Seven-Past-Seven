@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class FullScreenEffectScript : MonoBehaviour
 {
     public static FullScreenEffectScript instance;
+    
     Image eyeBlink;
     [SerializeField] public float blinkTime = 2;
     [SerializeField] Material material;
@@ -21,7 +22,12 @@ public class FullScreenEffectScript : MonoBehaviour
         Eye = 2
     }
     [SerializeField] FadeStyleEnum fadeStyle = FadeStyleEnum.Normal;
-    
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         eyeBlink = GetComponent<Image>();

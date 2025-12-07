@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ACT_Setter : MonoBehaviour
 {
-    public static ACT_Setter instance;
-    
     public List<ACT_Data> actData;
     public int currentActIndex;
 
@@ -23,7 +21,7 @@ public class ACT_Setter : MonoBehaviour
         pms = player.GetComponent<PlayerMovementScript>();
         hs = player.GetComponent<HealthSystem>();
 
-        if (currentActIndex >= 0)
+        if (currentActIndex <= 0)
         {
             NextAct();
         }
@@ -37,8 +35,6 @@ public class ACT_Setter : MonoBehaviour
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;
         hs.RefreshHealth(actData[currentActIndex].maxHealth,actData[currentActIndex].maxHearts,actData[currentActIndex].enduranceModifier);
         
-        Debug.Log($"Transported {ss.currentShooter}'s Ability Stack to No.7");
-        NotificationTextScript.instance.ShowNotification($"Transported {ss.currentShooter}'s Ability Stack to No.7");
     }
     
     public void NextAct()

@@ -37,6 +37,8 @@ public class LevelManagerScript : MonoBehaviour
                 checkpoints[i].isChecked = true;
             }
             currentCheckpoint = checkpointNumber;
+            
+            NotificationTextScript.instance.ShowNotification($"Checkpoint reached!");
         }
     }
 

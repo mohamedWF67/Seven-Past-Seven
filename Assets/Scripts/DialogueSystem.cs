@@ -25,7 +25,7 @@ public class DialogueSystem : MonoBehaviour
     private InputAction escapeBtn;
 
 
-    private void Start()
+    private void Awake()
     {
         dsBox = dialogueBox.GetComponent<DialogueSystemBox>();
         skipBtn = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Skip");
