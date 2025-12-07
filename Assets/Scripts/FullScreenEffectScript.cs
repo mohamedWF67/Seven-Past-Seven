@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class FullScreenEffectScript : MonoBehaviour
 {
+    public static FullScreenEffectScript instance;
     Image eyeBlink;
     [SerializeField] public float blinkTime = 2;
     [SerializeField] Material material;

@@ -25,16 +25,14 @@ public class PortalLogic : MonoBehaviour
     [Tooltip("If the portal is unlocked.")] 
     [SerializeField] private bool isUnlocked;
     
-    
+    private Collider2D player;
     private InputAction portalInput;
     public Coroutine teleportingCoroutine;
-    private FullScreenEffectScript fss;
     [SerializeField]bool isCoroutineRunning;
-    private Collider2D player;
+    
     private void Start()
     {
         portalInput = PlayerInput.actions.FindAction("Teleport");
-        fss = FindFirstObjectByType<FullScreenEffectScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -100,16 +98,16 @@ public class PortalLogic : MonoBehaviour
             yield break;
         }
         isCoroutineRunning = true;
-        fss.Blink();
+        FullScreenEffectScript.instance.Blink();
         if (destinationPortal.TryGetComponent(out PortalLogic portal))
             portal.isCoroutineRunning = true;
-        yield return new WaitForSeconds(fss.blinkTime);
+        yield return new WaitForSeconds(FullScreenEffectScript.instance.blinkTime);
         //* Adds the player to the other portal's set.
         portal.portalObjects.Add(other.gameObject);
         portal.player = player;
         //* Teleports the player.
         other.transform.position = destinationPortal.position;
-        yield return new WaitForSeconds(fss.blinkTime);
+        yield return new WaitForSeconds(FullScreenEffectScript.instance.blinkTime);
         //Debug.Log("Ready for teleport");
         isCoroutineRunning = false;
         portal.isCoroutineRunning = false;

@@ -17,7 +17,8 @@ public class ACT_Data : ScriptableObject
     public int maxHealth;
     public int maxHearts;
     public float enduranceModifier;
-    
+
+    public bool canFire;
     public bool canDash;
     public bool canDoubleJump;
     public bool canWallJump;

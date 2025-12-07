@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,8 +153,8 @@ TextureImporter:
       name: tileSet_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -197,7 +197,7 @@ TextureImporter:
       name: tileSet_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 64
         width: 64
         height: 64
@@ -219,8 +219,8 @@ TextureImporter:
       name: tileSet_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 256
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -241,7 +241,7 @@ TextureImporter:
       name: tileSet_6
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 0
         width: 64
         height: 64
@@ -255,6 +255,50 @@ TextureImporter:
       bones: []
       spriteID: 6258aa7e671047e4f9d075b56b6c94d6
       internalID: -1900819763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5951b4349d4f2c4aa8a77b370cd6dbd
+      internalID: -1858486272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileSet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73567b3dd731d8468b5ba99e01fe698
+      internalID: 1678453163
       vertices: []
       indices: 
       edges: []
@@ -280,6 +324,8 @@ TextureImporter:
       tileSet_4: 636920771
       tileSet_5: -1094034345
       tileSet_6: -1900819763
+      tileSet_7: -1858486272
+      tileSet_8: 1678453163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,7 +11,7 @@ public class ShootingScript : MonoBehaviour
     Camera cam;
     private Vector3 mousePos;
     bool isFiring;
-    [SerializeField] bool canFire = true;
+    public bool canFire = true;
     private PlayerInput pi;
     private InputAction ia;
     private InputAction lookAction;

@@ -19,6 +19,7 @@ public class DialogueSystem : MonoBehaviour
     public float speed;
     private bool isDialogueFinished;
     private bool isInDialogue;
+    private bool isActMover;
     
     private InputAction skipBtn;
     private InputAction escapeBtn;
@@ -75,7 +76,7 @@ public class DialogueSystem : MonoBehaviour
 
     void onDialogueFinish()
     {
-        //* Do something here.
+        //if (isActMover) ACT_Setter.instance.NextAct();
     }
     
     IEnumerator Type()
@@ -99,7 +100,7 @@ public class DialogueSystem : MonoBehaviour
         dsBox.ResetDialogueSystem();
         lineIndex = 0;
         dialogueText.text = "";
-        dialogueBox.SetActive(false);
+        if(dialogueBox != null) dialogueBox.SetActive(false);
         GameManagerScript.instance.inUI = false;
     }
 }
