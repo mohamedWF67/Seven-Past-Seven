@@ -10,10 +10,10 @@ public class Attractable : MonoBehaviour
     [Tooltip("The radius of the attraction area.")]
     [SerializeField] private float attractionRadius = 1.5f;
     [Space(10)]
-    [Tooltip("The distance of the ground check.")]
+    [Tooltip("The distance between the item and the ground (0 = no check).")]
     [SerializeField] private float groundCheckDistance = 1f;
     
-    [Tooltip("The distance to the player to attract to.")]
+    [Tooltip("How close can the object be to the player.")]
     [SerializeField] private float distanceToPlayer = 1;
     //! Not YET IMPLEMENTED.
     [Tooltip("If the Attraction Speed is = to the player's speed.")] 
@@ -36,7 +36,6 @@ public class Attractable : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        
         var isPlayerInRadius = Physics2D.OverlapCircle(transform.position, attractionRadius, playerLayer);
 
         if (isPlayerInRadius != null && target == null)

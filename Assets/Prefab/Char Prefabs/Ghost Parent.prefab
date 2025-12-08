@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0.4
+  speed: 1
 --- !u!1 &4217418242754894363
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,34 +229,15 @@ MonoBehaviour:
   dsBox: {fileID: 0}
   dialogueText: {fileID: 0}
   lines:
-  - "AIRA (GHOST):\u2026Don\u2019t run\u2026 it\u2019s just me..."
-  - "NO.7: A-Aira\u2026? What\u2014 what happened to you? Why do you look like that?"
-  - "AIRA (GHOST): This is only a part of me\u2026 a projection. My real body is\u2026
-    somewhere else. Relatively safe"
-  - "AIRA (GHOST): I\u2019ve been here longer than you think."
-  - "NO.7:How are you\u2014 like this?"
-  - "AIRA (GHOST): Time here isn\u2019t time. I entered first\u2026 so the world
-    swallowed me first."
-  - 'NO.7: What is this place? Where are the others? Are they alive?'
-  - "AIRA (GHOST): Alive\u2026 but trapped. Each one caught in a world shaped by
-    their worst fear."
-  - "AIRA (GHOST): This place\u2014this twisted university\u2014it feeds on emotion.
-    It manifests it, twists it, locks you inside it"
-  - "AIRA (GHOST):My ability\u2026 it grew here. I can create spirits, guide them,
-    fight through them. But every spirit I project drains me. Costs\u2026 years,
-    maybe. I stopped counting"
-  - "AIRA (GHOST): I sent this spirit the moment I felt you arrive. You\u2019re different,
-    Seven. This place hasn\u2019t eaten at you yet"
-  - 'NO.7: Tell me what to do. Tell me how to save them.'
-  - "AIRA (GHOST):Come to me. My real body is in the auditorium. I can\u2019t explain
-    everything through this projection\u2026 it won\u2019t hold long."
-  - 'NO.7: Are you in danger?'
-  - 'AIRA (GHOST): No one is safe.'
-  - "AIRA (GHOST): Just get here to the auditorium, Seven. And\u2026 be careful.
-    You\u2019re not alone in these halls."
+  - 'AIRA (GHOST): Nice work, you got the artifact!'
+  - "AIRA (GHOST): We\u2019re one step closer to getting everyone back."
+  - 'AIRA (GHOST): Now hurry Echo is still trapped in Arts and Design. Go save him
+    using Aira''s abilities. '
   lineIndex: 0
   dialogueSound: {fileID: 0}
   speed: 0.1
+  isActMover: 0
+  isMandatory: 0
 --- !u!61 &5476378833837993553
 BoxCollider2D:
   m_ObjectHideFlags: 0

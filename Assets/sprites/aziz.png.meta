@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 45
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,10 +106,10 @@ TextureImporter:
       name: aziz_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 0
-        width: 36
-        height: 57
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: aziz_1
       rect:
         serializedVersion: 2
-        x: 78
+        x: 64
         y: 0
-        width: 36
-        height: 56
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1abf7772f17ab5944b8801d36d59df8d
     internalID: 0
     vertices: []
     indices: 

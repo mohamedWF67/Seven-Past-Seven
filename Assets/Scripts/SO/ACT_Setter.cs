@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ACT_Setter : MonoBehaviour
 {
+    public static ACT_Setter instance;
     public List<ACT_Data> actData;
     public int currentActIndex;
 
@@ -16,6 +17,8 @@ public class ACT_Setter : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+        
         player = GameObject.FindGameObjectWithTag("Player");
         ss = player.GetComponentInChildren<ShootingScript>();
         pms = player.GetComponent<PlayerMovementScript>();
@@ -35,6 +38,7 @@ public class ACT_Setter : MonoBehaviour
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;
         hs.RefreshHealth(actData[currentActIndex].maxHealth,actData[currentActIndex].maxHearts,actData[currentActIndex].enduranceModifier);
         
+        NotificationTextScript.instance.ShowNotification($"You have acquired {actData[currentActIndex].CurrentAbilityStack}'s abilities.");
     }
     
     public void NextAct()

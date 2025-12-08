@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class AbilityMenuUI : MonoBehaviour
 {
-    private float abilityCooldown;
-    private float passiveCooldown;
+    [SerializeField]private GameObject abilityMenu;
     
     [SerializeField]private GameObject abilityImage;
     [SerializeField]private GameObject passiveImage;
@@ -17,12 +16,20 @@ public class AbilityMenuUI : MonoBehaviour
     
     [SerializeField]private ShootingScript ss;
     
-    private void Start()
+    private float abilityCooldown;
+    private float passiveCooldown;
+    
+    private void Awake()
     {
         ss = PlayerInput.GetPlayerByIndex(0).gameObject.GetComponentInChildren<ShootingScript>();
     }
     private void Update()
     {
+        if (ss != null)
+        {
+            abilityMenu.SetActive(ss.canFire);
+        }
+        
         if (abilityCooldown < 1f)
             abilityIcon.color = new Color(1f,1f,1f,0.2f);
         if (passiveCooldown < 1f)

@@ -321,10 +321,10 @@ public class PlayerMovementScript : MonoBehaviour
     
     private void checkCollisions()
     {   //* Checks if the player is near the upper edge of a wall.
-        bool raycastHit = Physics2D.Raycast(transform.position + Vector3.down * 0.45f + (isWalledRight? Vector3.right : Vector3.left) * 0.5f, Vector2.up, wallDetectHeight, _groundLayer);
+        bool raycastHit = Physics2D.Raycast(transform.position + Vector3.down * 1f + (isWalledRight? Vector3.right : Vector3.left) * 0.5f, Vector2.up, wallDetectHeight, _groundLayer);
         //* Checks if the player is touching a wall to the right or left.
-        isWalledRight = Physics2D.OverlapCircle(transform.position + Vector3.right * 0.4f, groundCheckRadius, _groundLayer);
-        isWalledLeft = Physics2D.OverlapCircle(transform.position + Vector3.left * 0.4f, groundCheckRadius, _groundLayer);
+        isWalledRight = Physics2D.OverlapCircle(transform.position + Vector3.down * 0.4f  + Vector3.right * 0.4f, groundCheckRadius, _groundLayer);
+        isWalledLeft = Physics2D.OverlapCircle(transform.position + Vector3.down * 0.4f  + Vector3.left * 0.4f, groundCheckRadius, _groundLayer);
         //* Checks if the player is on the ground or walled.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, _groundLayer) || (raycastHit && (isWalledLeft || isWalledRight));
         
@@ -604,12 +604,12 @@ public class PlayerMovementScript : MonoBehaviour
             Gizmos.DrawLine(targetVectorStart2, targetVectorEnd2);
             //* Draws the wall check sphere visually distance.
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position + Vector3.right * 0.4f * transform.localScale.x, groundCheckRadius);
+            Gizmos.DrawWireSphere(transform.position + Vector3.down * 0.4f  + Vector3.right * 0.4f * transform.localScale.x, groundCheckRadius);
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position + Vector3.left * 0.4f * transform.localScale.x, groundCheckRadius);
+            Gizmos.DrawWireSphere(transform.position + Vector3.down * 0.4f + Vector3.left * 0.4f * transform.localScale.x, groundCheckRadius);
             //* Draws the wall's edge check line.
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position + Vector3.down * 0.45f + (isWalledRight? Vector3.right : Vector3.left) * 0.5f, transform.position + Vector3.down * 0.45f + (isWalledRight? Vector3.right : Vector3.left) * 0.5f + Vector3.up * wallDetectHeight);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(transform.position + Vector3.down * 1f + (isWalledRight? Vector3.right : Vector3.left) * 0.51f, transform.position + Vector3.down * 1f + (isWalledRight? Vector3.right : Vector3.left) * 0.51f + Vector3.up * wallDetectHeight);
         }
     }
 }

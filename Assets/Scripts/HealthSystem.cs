@@ -29,7 +29,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private int currentHearts;
     
     [Tooltip("If the player is dead.")]
-    [SerializeField] private bool isDead;
+    [SerializeField] public bool isDead;
 
     [Header("Endurance")] 
     [Tooltip("If the player is amune to damage.")]

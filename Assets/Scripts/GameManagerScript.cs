@@ -22,6 +22,13 @@ public class GameManagerScript : MonoBehaviour
     
     public bool inUI = false;
     
+    #region ITEMS
+    
+    private int artifactCount;
+    private int coinCount;
+    
+    #endregion
+    
     
     private void Awake()
     {
@@ -87,4 +94,21 @@ public class GameManagerScript : MonoBehaviour
         currentSceneIndex++;
         
     }
+
+    #region ITEMS FUNCTIONS
+
+    public void AddArtifact()
+    {
+        if (artifactCount <= ACT_Setter.instance.currentActIndex + 1)
+        {
+            artifactCount++;
+        }
+    }
+
+    public void AddCoin()
+    {
+        coinCount++;
+    }
+    
+    #endregion
 }

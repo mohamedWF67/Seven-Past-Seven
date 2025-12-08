@@ -58,6 +58,8 @@ public class ShootingScript : MonoBehaviour
 
     private void ActionChecks()
     {
+        if (!canFire) return;
+        
         if (switchAbility.triggered && abilityCoroutine == null)
         {
             abilityCoroutine = StartCoroutine(PerformAbility());
@@ -81,7 +83,7 @@ public class ShootingScript : MonoBehaviour
             }
         }
         
-        if (firingCoroutine == null && ia.IsPressed() && canFire)
+        if (ia.IsPressed() && firingCoroutine == null)
         {
             firingCoroutine = StartCoroutine(Fire());
         }

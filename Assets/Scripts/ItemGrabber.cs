@@ -5,7 +5,6 @@ public class ItemGrabber : MonoBehaviour
 {
     private HealthSystem hs;
     [SerializeField] private ScoreTest score;
-    private int coins = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,12 +24,16 @@ public class ItemGrabber : MonoBehaviour
         {
             case 0:
                 NotificationTextScript.instance.ShowNotification($"Coins : {item.value}");
-                coins += item.value;
+                GameManagerScript.instance.AddCoin();
                 score.AddScoreFromPoints(item.value);
                 break;
             case 1:
                 NotificationTextScript.instance.ShowNotification($"Health : {item.value}");
                 hs.Heal(item.value);
+                break;
+            case 2:
+                NotificationTextScript.instance.ShowNotification($"You have acquired an artifact.");
+                GameManagerScript.instance.AddArtifact();
                 break;
         }
         Destroy(other.gameObject);

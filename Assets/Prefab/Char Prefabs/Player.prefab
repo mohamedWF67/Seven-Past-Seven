@@ -206,7 +206,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4807309222571639580}
   groundCheckRadius: 0.1
   isGrounded: 0
-  wallDetectHeight: 1
+  wallDetectHeight: 1.5
   WallJumpForce: 3
   _angle: 30
   wallFallLimit: 2
@@ -5367,14 +5367,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8060206853659197961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.19166577, w: 0.9814603}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6178489699365233179}
   m_Father: {fileID: 7963585329679908704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -697.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &3207853755443629229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5478,8 +5478,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1752165703
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

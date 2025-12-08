@@ -19,7 +19,9 @@ public class DialogueSystem : MonoBehaviour
     public float speed;
     private bool isDialogueFinished;
     private bool isInDialogue;
-    private bool isActMover;
+    
+    [SerializeField] private bool isActMover;
+    [SerializeField] private bool isMandatory;
     
     private InputAction skipBtn;
     private InputAction escapeBtn;
@@ -36,7 +38,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if (skipBtn.triggered && isInDialogue)
             NextLine();
-        else if (escapeBtn.triggered && isInDialogue)
+        else if (escapeBtn.triggered && isInDialogue && !isMandatory)
             CancelDialogue();
     }
 
@@ -76,7 +78,7 @@ public class DialogueSystem : MonoBehaviour
 
     void onDialogueFinish()
     {
-        //if (isActMover) ACT_Setter.instance.NextAct();
+        if (isActMover) ACT_Setter.instance.NextAct();
     }
     
     IEnumerator Type()
