@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.7
+      value: -31.29
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -227,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082164998324381808, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.40025342
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -659,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 586819555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.7, y: 0, z: -10}
+  m_LocalPosition: {x: -31.29, y: -0.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1317,31 +1321,48 @@ MonoBehaviour:
   dsBox: {fileID: 0}
   dialogueText: {fileID: 2108787713}
   lines:
-  - "AIRA (GHOST):\u2026Don\u2019t run\u2026 it\u2019s just me..."
-  - "NO.7: A-Aira\u2026? What\u2014 what happened to you? Why do you look like that?"
-  - "AIRA (GHOST): This is only a part of me\u2026 a projection. My real body is\u2026
-    somewhere else. Relatively safe"
-  - "AIRA (GHOST): I\u2019ve been here longer than you think."
-  - "NO.7:How are you\u2014 like this?"
-  - "AIRA (GHOST): Time here isn\u2019t time. I entered first\u2026 so the world
-    swallowed me first."
-  - 'NO.7: What is this place? Where are the others? Are they alive?'
-  - "AIRA (GHOST): Alive\u2026 but trapped. Each one caught in a world shaped by
-    their worst fear."
-  - "AIRA (GHOST): This place\u2014this twisted university\u2014it feeds on emotion.
-    It manifests it, twists it, locks you inside it"
-  - "AIRA (GHOST):My ability\u2026 it grew here. I can create spirits, guide them,
-    fight through them. But every spirit I project drains me. Costs\u2026 years,
-    maybe. I stopped counting"
-  - "AIRA (GHOST): I sent this spirit the moment I felt you arrive. You\u2019re different,
-    Seven. This place hasn\u2019t eaten at you yet"
-  - 'NO.7: Tell me what to do. Tell me how to save them.'
-  - "AIRA (GHOST):Come to me. My real body is in the auditorium. I can\u2019t explain
-    everything through this projection\u2026 it won\u2019t hold long."
-  - 'NO.7: Are you in danger?'
-  - 'AIRA (GHOST): No one is safe.'
-  - "AIRA (GHOST): Just get here to the auditorium, Seven. And\u2026 be careful.
-    You\u2019re not alone in these halls."
+  - "Who\u2019s there? Aziz\u2026 is that you?..."
+  - "AIRA: Yes, my ghost found you. I suspected you\u2019d show up. do you look like
+    that?"
+  - 'no7: What are you talking about? Why does the college look like this? Where
+    are our friends? '
+  - 'AIRA: Do you remember the door we entered?'
+  - 'no7: Yes. That was five minutes ago. '
+  - "AIRA: Not exactly. You don\u2019t know it yet, but time works differently here.
+    One minute in our world is one hour in this universe."
+  - "AIRA: All of us got scattered across different universes. But this place\u2026
+    it\u2019s not the version you know. Everything here wants to hurt you."
+  - 'no7: What happened to the others?'
+  - "AIRA:Each one of us gained a power linked to their personality. But they\u2019re
+    trapped in different buildings, each one facing a problem they can\u2019t escape
+    on their own."
+  - "AIRA:This ghost is my power. That\u2019s how I sensed you."
+  - "AIRA:You have to find the rest. Help each one overcome their own challenge.
+    That\u2019s the only way out of this world."
+  - "no7: Explain. How am I supposed to help them? I\u2019m not strong. I can\u2019t
+    fight anything here. "
+  - "AIRA: You\u2019re wrong. I can sense a power in you stronger than any of ours.
+    You can copy other abilities and use them as your own. "
+  - "no7: Copying powers\u2026 how does that help anyone?"
+  - "AIRA: Each friend is trapped inside a different building. To escape, they must
+    confront something tied to this world. Something actively trying to keep us here.
+    At the end of every building, you\u2019ll face a guardian. you must defeat it
+    and you\u2019ll obtain a key that get us closer to our freedom Aziz: Each victory
+    gives you an artifact. Those artifacts are the keys to our freedom. "
+  - 'no7: So i must find our friends, defeat the guardians and collect the artifacts?
+    How do we know its the artifact? '
+  - "AIRA:: Yes and you\u2019ll recognize it when you see it. And with your ability,
+    you\u2019ll be able to do what they can\u2019t."
+  - "no7: After that\u2026 how do we get out?"
+  - 'AIRA: The door we came through has seven empty slots. One for every artifact
+    you collect. Once all seven are in place, the door will reopen to our world.'
+  - 'no7: Can you sense where the others are, like you sensed me? '
+  - AIRA:Yes. My ghost will stay with you. It will guide you to every one of our
+    friends.
+  - 'AIRA: For now, you can take my powers to take the artifact in the Auditorium,
+    goodluck.'
+  - "AIRA: Just get here to the auditorium, Seven. And\u2026 be careful. You\u2019re
+    not alone in these halls."
   lineIndex: 0
   dialogueSound: {fileID: 0}
   speed: 0.1
