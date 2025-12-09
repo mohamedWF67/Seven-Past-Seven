@@ -32,7 +32,7 @@ public class ACT_Setter : MonoBehaviour
 
     public void SetActData()
     {
-        ss.currentShooter = (ShootingScript.Shooter)actData[currentActIndex].CurrentAbilityStack;
+        ss.currentShooter = actData[currentActIndex].CurrentAbilityStack;
         ss.canFire = actData[currentActIndex].canFire;
         pms.canDash = actData[currentActIndex].canDash;
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;

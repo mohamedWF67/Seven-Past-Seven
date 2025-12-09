@@ -110,6 +110,12 @@ public class ShootingScript : MonoBehaviour
         }
 
         //Debug.Log("Ability Performed");
+
+        if (currentShooter == Shooter.Echo)
+        {
+            float totalTime = ULTs[currentShooterIndex].duration + ULTs[currentShooterIndex].delayTime + ULTs[currentShooterIndex].delayffect;
+            CameraShake.Instance.Shake(5,1,totalTime);
+        }
         
         float cooldown = ULTs[currentShooterIndex].cooldown;
         while (cooldown > 0)
@@ -141,6 +147,11 @@ public class ShootingScript : MonoBehaviour
         behaviour.canPathTroughEnemies = shotTypes[currentShooterIndex].canPathThroughEnemies;
         
         bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir.x,dir.y).normalized * shotTypes[currentShooterIndex].speed;
+        
+        if (currentShooter == Shooter.Echo)
+        {
+            CameraShake.Instance.Shake(0.5f,1);
+        }
         
         float cooldown = shotTypes[currentShooterIndex].fireRate;
         while (cooldown > 0)

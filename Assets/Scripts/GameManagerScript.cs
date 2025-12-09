@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,17 +11,36 @@ public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript instance;
     
+    [Header("Pause")]
     [SerializeField] GameObject pauseMenu;
     private InputAction pauseAction;
     private bool gamePaused;
     
+    [Header("Act")]
     [SerializeField] GameObject actFinishedUI;
     
-    [SerializeField] private List<SceneAsset> scenes;
     [SerializeField] private int currentSceneIndex;
+    [SerializeField] private List<SceneAsset> scenes;
     Coroutine loadNextActCoroutine;
+
+    #region SCORE AREA
+    [Header("Score")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] private float initialScore;
+    public float score;
+    [SerializeField] private float scaleFactor = 0.5f;
+    [SerializeField] private float timeFactor = 60f;
+    [SerializeField] private float currentTime;
+    [Space(5)]
+    [SerializeField] private float scoreMultiplier = 100;
+    [SerializeField] private float extraScore;
+    [SerializeField] private float extraScaleFactor = 0.5f;
+    [SerializeField] private float extraTimeFactor = 120f;
+    [Space(5)]
+    [SerializeField] private float totalScore;
+    #endregion
     
-    public bool inUI = false;
+    [HideInInspector] public bool inUI = false;
     
     #region ITEMS
     
@@ -46,6 +66,8 @@ public class GameManagerScript : MonoBehaviour
     private void Update()
     {
         if (pauseAction.triggered) PauseGame();
+        
+        ScoreUpdate();
     }
 
     public void QuitGame()
@@ -75,6 +97,7 @@ public class GameManagerScript : MonoBehaviour
     public void ACT_Finished()
     {
         Time.timeScale = 0;
+        inUI = true;
         actFinishedUI.SetActive(true);
     }
 
@@ -110,5 +133,24 @@ public class GameManagerScript : MonoBehaviour
         coinCount++;
     }
     
+    #endregion
+
+    #region SCORE FUNCTIONS
+
+    public void ScoreUpdate()
+    {
+        float t = Time.time - currentTime;
+        score = initialScore * MathF.Pow(scaleFactor,t/timeFactor);
+        scoreText.text = score.ToString("0000");
+        totalScore = score + extraScore;
+    }
+
+    public void AddScoreFromPoints(float points,float multiplier = 1)
+    {
+        float t = Time.time - currentTime;
+        float tempScore = points * scoreMultiplier * multiplier * MathF.Pow(extraScaleFactor,t/extraTimeFactor);
+        extraScore += tempScore;
+        Debug.Log($"Extra Score: {extraScore} and Temp Score: {tempScore}");
+    }  
     #endregion
 }
