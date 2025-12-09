@@ -19,12 +19,25 @@ public class AbilityMenuUI : MonoBehaviour
     private float abilityCooldown;
     private float passiveCooldown;
     
+    bool allReferencesSet => ss != null;
+    
     private void Awake()
     {
-        ss = PlayerInput.GetPlayerByIndex(0).gameObject.GetComponentInChildren<ShootingScript>();
+        CheckReferences();
     }
+    
+    void CheckReferences()
+    {
+        if (allReferencesSet) return;
+        Debug.Log($" {gameObject.name} Setting references...");
+        if (ss == null)
+            ss = PlayerInput.GetPlayerByIndex(0).gameObject.GetComponentInChildren<ShootingScript>();
+    }
+    
     private void Update()
     {
+        CheckReferences();
+        
         if (ss != null)
         {
             abilityMenu.SetActive(ss.canFire);

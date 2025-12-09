@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class FallingTrap : MonoBehaviour
 {
-    [Tooltip("Player's layer mask.")]
-    [SerializeField] private LayerMask playerMask;
+    
+    private LayerMask playerMask;
     
     [Tooltip("Maximum distance for detecting player.")]
     [SerializeField] private float maxDistance;
@@ -14,6 +14,7 @@ public class FallingTrap : MonoBehaviour
     
     [Tooltip("Time till Destroying the trap.")]
     float destroyDelay;
+    
     Rigidbody2D rb;
 
     private void OnValidate()
@@ -26,13 +27,13 @@ public class FallingTrap : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerMask = LayerMask.GetMask("Player");
     }
 
     private void Update()
     {
         if (IsPlayerDirectlyUnder())
             StartCoroutine(TrapFall());
-        
     }
     
     bool IsPlayerDirectlyUnder()
@@ -50,8 +51,8 @@ public class FallingTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {   //* Destroys the trap on touching the player or ground.
-        if (other.gameObject.CompareTag("Player")) {
-            other.gameObject.GetComponent<HealthSystem>().GiveDamage(playerDamage);
+        if (other.gameObject.TryGetComponent(out HealthSystem hs)) {
+            hs.GiveDamage(playerDamage);
             Destroy(gameObject);
         }else if (other.gameObject.CompareTag("Ground"))
             Destroy(gameObject);

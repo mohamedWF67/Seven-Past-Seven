@@ -27,14 +27,28 @@ public class HealthUI : MonoBehaviour
     int healthTextTweenId = -1;
     int healthPunchTweenId = -1;
     
+    bool allReferencesSet => hs != null && heartMeterImage != null;
+    
     void Awake()
     {
-        hs = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
-        heartMeterImage = heartMeter.GetComponent<Image>();
+        CheckReferences();
+    }
+
+    void CheckReferences()
+    {
+        if (allReferencesSet) return;
+        Debug.Log( "Setting references...");
+        if (hs == null)
+            hs = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
+        if (heartMeterImage == null)
+            heartMeterImage = heartMeter.GetComponent<Image>();
     }
 
     void LateUpdate()
     {
+        
+        CheckReferences();
+        
         if (hs.isShieled)
         {
             shieldImage.SetActive(true);

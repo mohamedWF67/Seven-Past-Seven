@@ -21,10 +21,15 @@ public class FullScreenEffectScript : MonoBehaviour
         Normal = 1,
         Eye = 2
     }
-    [SerializeField] FadeStyleEnum fadeStyle = FadeStyleEnum.Normal;
+    [SerializeField] FadeStyleEnum fadeStyle = FadeStyleEnum.Eye;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
     }
 

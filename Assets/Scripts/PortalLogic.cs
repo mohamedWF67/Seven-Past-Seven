@@ -13,9 +13,6 @@ public class PortalLogic : MonoBehaviour
     [Tooltip("Sets the portal to teleport to.")]
     [SerializeField] Transform destinationPortal;
     
-    [Tooltip("Sets The Player Input.")]
-    [SerializeField] private PlayerInput PlayerInput;
-    
     [Tooltip("Toogle for if portal imediately teleports the player or only when pressing the up arrow.")]
     [SerializeField] private bool isSideTeleport;
     
@@ -32,7 +29,7 @@ public class PortalLogic : MonoBehaviour
     
     private void Start()
     {
-        portalInput = PlayerInput.actions.FindAction("Teleport");
+        portalInput = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Teleport");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -4,12 +4,10 @@ using UnityEngine;
 public class ItemGrabber : MonoBehaviour
 {
     private HealthSystem hs;
-    [SerializeField] private ScoreTest score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hs = GetComponent<HealthSystem>();
-        score = FindAnyObjectByType<ScoreTest>();
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,8 +22,7 @@ public class ItemGrabber : MonoBehaviour
         {
             case 0:
                 NotificationTextScript.instance.ShowNotification($"Coins : {item.value}");
-                GameManagerScript.instance.AddCoin();
-                score.AddScoreFromPoints(item.value);
+                GameManagerScript.instance.AddCoin(item.value);
                 break;
             case 1:
                 NotificationTextScript.instance.ShowNotification($"Health : {item.value}");

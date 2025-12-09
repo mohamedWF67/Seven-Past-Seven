@@ -9,22 +9,43 @@ public class DevMenuHelper : MonoBehaviour
     private GameObject player;
     private HealthSystem hs;
     private ShootingScript ss;
+    private Vector3 exitPosition;
 
     private float timer;
     private int devModeClickCount;
     [SerializeField,Range(0,10)] private int devModeClickCountTarget = 10;
     private bool isDevModeOn;
     
+    int currentCheckpointIndex;
+    
+    bool allReferencesSet => player != null && hs != null && ss != null;
+    
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        hs = player.GetComponent<HealthSystem>();
-        ss = player.GetComponentInChildren<ShootingScript>();
+        CheckReferences();
     }
 
     private void Update()
     {
+        CheckReferences();
+        
         DevModeMethod();
+    }
+    
+    void CheckReferences()
+    {
+        if (allReferencesSet) return;
+        
+        Debug.Log($"{gameObject.name}  Setting references...");
+        
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        if (hs == null)
+            hs = player.GetComponent<HealthSystem>();
+        if (ss == null)
+            ss = player.GetComponentInChildren<ShootingScript>();
+        if (exitPosition == Vector3.zero)
+            exitPosition = GameObject.FindGameObjectWithTag("Exit").transform.position;
     }
 
     public void DamagePlayer(int damage)
@@ -39,8 +60,26 @@ public class DevMenuHelper : MonoBehaviour
 
     public void ChangeAbility()
     {
-        int abilityIndex = (int)ss.currentShooter + 1 % 6;
+        int abilityIndex = ((int)ss.currentShooter + 1) % ss.shotTypes.Count;
+        Debug.Log($"Ability index: {(ShootingScript.Shooter)abilityIndex}");
         ss.currentShooter = (ShootingScript.Shooter)abilityIndex;
+    }
+
+    public void TeleportPlayerToExit()
+    {
+        player.transform.position = exitPosition + Vector3.up * 1;
+    }
+
+    public void TeleportPlayerThroughCheckpoints()
+    {
+        int checkpointCount = LevelManagerScript.instance.checkpoints.Length;
+        
+        int index = currentCheckpointIndex % checkpointCount;
+        currentCheckpointIndex++;
+        
+        player.transform.position = LevelManagerScript.instance.checkpoints[index].transform.position + Vector3.up * 1f;
+        
+        Debug.Log($"Teleported to checkpoint {index + 1}");
     }
     
     void DevModeMethod()

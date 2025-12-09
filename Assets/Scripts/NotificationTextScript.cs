@@ -15,8 +15,13 @@ public class NotificationTextScript : MonoBehaviour
     
     private void Awake()
     {
-        if (instance != null && instance != this) Destroy(gameObject);
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
+        
         notificationText.text = "";
     }
     

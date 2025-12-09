@@ -10,13 +10,20 @@ public class ACT_Setter : MonoBehaviour
     public List<ACT_Data> actData;
     public int currentActIndex;
 
-    public GameObject player;
-    public ShootingScript ss;
-    public PlayerMovementScript pms;
-    public HealthSystem hs;
+    GameObject player;
+    ShootingScript ss;
+    PlayerMovementScript pms;
+    HealthSystem hs;
+    
+    bool allReferencesSet => player != null && ss != null && pms != null && hs != null;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
         
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,12 +37,21 @@ public class ACT_Setter : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (!allReferencesSet)
+        {
+            Awake();
+        }
+    }
+
     public void SetActData()
     {
         ss.currentShooter = actData[currentActIndex].CurrentAbilityStack;
         ss.canFire = actData[currentActIndex].canFire;
         pms.canDash = actData[currentActIndex].canDash;
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;
+        
         hs.RefreshHealth(actData[currentActIndex].maxHealth,actData[currentActIndex].maxHearts,actData[currentActIndex].enduranceModifier);
         
         NotificationTextScript.instance.ShowNotification($"You have acquired {actData[currentActIndex].CurrentAbilityStack}'s abilities.");

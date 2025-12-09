@@ -104,6 +104,7 @@ public class GameManagerScript : MonoBehaviour
     public void GoToNextAct()
     {
         Time.timeScale = 1;
+        inUI = false;
         if (loadNextActCoroutine != null) return;
             loadNextActCoroutine = StartCoroutine(DelayedLoad());
     }
@@ -125,12 +126,14 @@ public class GameManagerScript : MonoBehaviour
         if (artifactCount <= ACT_Setter.instance.currentActIndex + 1)
         {
             artifactCount++;
+            AddScoreFromPoints(2);
         }
     }
 
-    public void AddCoin()
+    public void AddCoin(int weight = 1)
     {
         coinCount++;
+        AddScoreFromPoints(weight);
     }
     
     #endregion

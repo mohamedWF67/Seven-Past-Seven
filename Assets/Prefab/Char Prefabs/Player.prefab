@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 5432096742261286163}
   - component: {fileID: 5976544321639354915}
   - component: {fileID: 7346498467635778110}
-  - component: {fileID: 567304898665533982}
   - component: {fileID: 5890429885032527438}
   - component: {fileID: 4634431315859664844}
   - component: {fileID: 1495876342806837323}
@@ -225,25 +224,9 @@ MonoBehaviour:
   dashClip: {fileID: 8300000, guid: 6bb7a7d2b950c9544b78ccdb8b8c4d55, type: 3}
   playerAnimator: {fileID: 0}
   currentControlScheme: 
-  Text1: {fileID: 0}
-  Text2: {fileID: 0}
-  Text3: {fileID: 0}
-  Text4: {fileID: 0}
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 98c9370b-1c91-4b3e-a779-2908055e3b52
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _forceLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &5432096742261286163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 1
   wasDamaged: 0
+  showHealthBar: 0
   enemyHealthBar: {fileID: 0}
   SpawnedHealthBar: {fileID: 0}
   maxHealth: 100
@@ -321,21 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b479706e1cedbc45bcf3c9675d2cf74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 0}
---- !u!114 &567304898665533982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165081490824343926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5256f95880a7f384a8970225dc094b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashMaterial: {fileID: -876546973899608171, guid: 4544ba7246cc19349a77455fb6c94e00, type: 3}
-  duration: 0.125
 --- !u!95 &5890429885032527438
 Animator:
   serializedVersion: 7

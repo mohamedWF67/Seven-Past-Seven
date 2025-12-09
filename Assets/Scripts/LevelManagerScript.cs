@@ -6,15 +6,17 @@ using Object = UnityEngine.Object;
 
 public class LevelManagerScript : MonoBehaviour
 {
-    [SerializeField] CheckpointScript[] checkpoints;
+    public static LevelManagerScript instance;
+    
+    public CheckpointScript[] checkpoints;
     [SerializeField] int currentCheckpoint;
+    
 
-    private GameObject player;
-
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        checkpoints = Object.FindObjectsByType<CheckpointScript>(sortMode: FindObjectsSortMode.None);
+        instance = this;
+        
+        checkpoints = FindObjectsByType<CheckpointScript>(sortMode: FindObjectsSortMode.None);
         
         checkpoints = checkpoints.OrderBy(e => e.transform.GetSiblingIndex())
             .ToArray();

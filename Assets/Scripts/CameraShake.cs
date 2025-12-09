@@ -6,18 +6,15 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake Instance;
-    
-    private CinemachineCamera cinemachineCamera;
     private CinemachineBasicMultiChannelPerlin noise;
     private Coroutine shakeCoroutine;
     
-    [SerializeField]private float shakeDuration;
-    [SerializeField]private float shakeIntensity;
-    [SerializeField]private float shakeFrequency;
+    [SerializeField]private float shakeDuration = 0.5f;
+    [SerializeField]private float shakeIntensity = 5;
+    [SerializeField]private float shakeFrequency = 1;
     
     private void Awake()
     {
-        cinemachineCamera = GetComponent<CinemachineCamera>();
         noise = GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
 
         Instance = this;

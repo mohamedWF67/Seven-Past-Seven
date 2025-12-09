@@ -200,22 +200,13 @@ public class PlayerMovementScript : MonoBehaviour
     Rigidbody2D rb;             //* The player's rigidbody
     PlayerInput PlayerInput;    //* the player's input
     
-    [Header("Text")]
-    
-    [SerializeField] TextMeshProUGUI Text1;
-    [SerializeField] TextMeshProUGUI Text2;
-    [SerializeField] TextMeshProUGUI Text3;
-    [SerializeField] TextMeshProUGUI Text4;
-    
     #endregion
     
     #region INPUT ACTIONS
-    
-    [HideInInspector]
-    public InputAction moveAction; //* Move action { < , > }
+    InputAction moveAction; //* Move action { < , > }
     Vector2 _moveInput;     //* The move axis
     InputAction jumpAction; //* Jump action { Space }
-    InputAction dashAction; //* Dash action { E }
+    InputAction dashAction; //* Dash action { Z }
     
     #endregion
     
@@ -225,9 +216,6 @@ public class PlayerMovementScript : MonoBehaviour
     
     [Tooltip("Ground layer")]
     [SerializeField] LayerMask _groundLayer;
-    
-    [Tooltip("Force layer")]
-    [SerializeField] LayerMask _forceLayer;
     
     #endregion
 

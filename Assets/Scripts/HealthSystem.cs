@@ -10,7 +10,8 @@ public class HealthSystem : MonoBehaviour
     [Tooltip("The type of entity that this script is attached to.")]
     [SerializeField] private bool isPlayer = false;
     
-    [SerializeField] private bool wasDamaged = false;
+    [SerializeField] private bool wasDamaged;
+    [SerializeField] private bool showHealthBar;
     [SerializeField] private GameObject enemyHealthBar;
     [SerializeField] private GameObject SpawnedHealthBar;
     
@@ -194,7 +195,7 @@ public class HealthSystem : MonoBehaviour
         currentHealth = Mathf.RoundToInt(health);
         currentHearts = Mathf.FloorToInt(hearts);
 
-        if (!wasDamaged && !isPlayer)
+        if (!wasDamaged && !isPlayer && showHealthBar)
         {
             wasDamaged = true;
             SpawnedHealthBar = Instantiate(enemyHealthBar,transform.position + Vector3.up * 1f * transform.localScale.y ,Quaternion.identity,transform);

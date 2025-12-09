@@ -16,13 +16,13 @@ using UnityEngine;
         #endregion
         #region Private Fields
 
-        // The SpriteRenderer that should flash.
+        //* The SpriteRenderer that should flash.
         private SpriteRenderer spriteRenderer;
 
-        // The material that was in use, when the script started.
+        //* The material that was in use, when the script started.
         private Material originalMaterial;
 
-        // The currently running coroutine.
+        //* The currently running coroutine.
         private Coroutine flashRoutine;
 
         #endregion
