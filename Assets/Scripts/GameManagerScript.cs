@@ -44,8 +44,8 @@ public class GameManagerScript : MonoBehaviour
     
     #region ITEMS
     
-    private int artifactCount;
-    private int coinCount;
+    [SerializeField]private int artifactCount;
+    [SerializeField]private int coinCount;
     
     #endregion
     
