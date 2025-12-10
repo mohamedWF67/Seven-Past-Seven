@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19783491
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -580,6 +580,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4192894786469780057, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -588,13 +600,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8271968793573515599, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -691879157924431996, guid: 525db0d067e12be41950d999820d2069, type: 3}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.4
       objectReference: {fileID: 0}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19783491
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.z

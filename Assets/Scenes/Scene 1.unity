@@ -943,6 +943,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 753356394253889505, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.76
+      objectReference: {fileID: 0}
     - target: {fileID: 4192894786469780057, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -951,6 +963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8271968793573515599, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1636318925241012259, guid: 5d120bf8f04569a4d8bbc071ddd43cac, type: 3}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.43
