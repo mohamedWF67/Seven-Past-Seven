@@ -45,7 +45,16 @@ public class DevMenuHelper : MonoBehaviour
         if (ss == null)
             ss = player.GetComponentInChildren<ShootingScript>();
         if (exitPosition == Vector3.zero)
-            exitPosition = GameObject.FindGameObjectWithTag("Exit").transform.position;
+        {
+            try
+            {
+                exitPosition = GameObject.FindGameObjectWithTag("Exit").transform.position;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+        }
     }
 
     public void DamagePlayer(int damage)
