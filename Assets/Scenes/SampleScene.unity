@@ -15385,7 +15385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812e4530e81ea8543984d268858bd0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customPath: 1
+  customPath: 0
   paths:
   - {fileID: 550891229}
   - {fileID: 843655110}
@@ -16390,7 +16390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationPortal: {fileID: 1167719018}
-  PlayerInput: {fileID: 1096189212}
   isSideTeleport: 1
   doorIndex: 1
   isUnlocked: 0
@@ -16727,7 +16726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationPortal: {fileID: 1089489578}
-  PlayerInput: {fileID: 1096189212}
   isSideTeleport: 1
   doorIndex: 1
   isUnlocked: 0

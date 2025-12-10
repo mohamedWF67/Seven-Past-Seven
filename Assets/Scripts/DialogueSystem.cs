@@ -44,13 +44,20 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (isDialogueFinished) return;
-        isInDialogue = true;
-        GameManagerScript.instance.inUI = true;
-        dsBox.SetDialogueSystem(this);
-        dialogueBox.SetActive(true);
-        lineIndex = 0;
-        StartCoroutine(Type());
+        try
+        {
+            if (isDialogueFinished) return;
+            isInDialogue = true;
+            GameManagerScript.instance.inUI = true;
+            dsBox.SetDialogueSystem(this);
+            dialogueBox.SetActive(true);
+            lineIndex = 0;
+            StartCoroutine(Type());
+        }
+        catch
+        {
+            Debug.Log("Dialogue not set");
+        }
     }
 
     public void NextLine()

@@ -29,7 +29,7 @@ public class AbilityMenuUI : MonoBehaviour
     void CheckReferences()
     {
         if (allReferencesSet) return;
-        Debug.Log($" {gameObject.name} Setting references...");
+        //Debug.Log($" {gameObject.name} Setting references...");
         if (ss == null)
             ss = PlayerInput.GetPlayerByIndex(0).gameObject.GetComponentInChildren<ShootingScript>();
     }

@@ -37,7 +37,7 @@ public class HealthUI : MonoBehaviour
     void CheckReferences()
     {
         if (allReferencesSet) return;
-        Debug.Log( "Setting references...");
+        //Debug.Log( "Setting references...");
         if (hs == null)
             hs = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
         if (heartMeterImage == null)

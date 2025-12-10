@@ -188,6 +188,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: canFire
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: currentShooter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976544321639354915, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: maxHearts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976544321639354915, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: currentHearts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.4
@@ -301,7 +317,7 @@ GameObject:
   - component: {fileID: 299829785}
   m_Layer: 0
   m_Name: Door Exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,10 +541,6 @@ PrefabInstance:
     - target: {fileID: 3255054370652370644, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
       propertyPath: m_Name
       value: inGame UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3255054370652370644, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6901641412337447181, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
       propertyPath: m_AnchorMax.y

@@ -14,7 +14,7 @@ public class PlayerSatsMenu : MonoBehaviour
     public PlayerInput playerInput;
     public InputAction TriggerAction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         ps = FindFirstObjectByType<PlayerMovementScript>();
         ss = ps.gameObject.GetComponentInChildren<ShootingScript>();

@@ -36,7 +36,7 @@ public class DevMenuHelper : MonoBehaviour
     {
         if (allReferencesSet) return;
         
-        Debug.Log($"{gameObject.name}  Setting references...");
+        //Debug.Log($"{gameObject.name}  Setting references...");
         
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
@@ -50,9 +50,9 @@ public class DevMenuHelper : MonoBehaviour
             {
                 exitPosition = GameObject.FindGameObjectWithTag("Exit").transform.position;
             }
-            catch (Exception e)
+            catch
             {
-                Debug.Log(e);
+                Debug.LogError("Exit not found!");
             }
         }
     }
@@ -76,7 +76,7 @@ public class DevMenuHelper : MonoBehaviour
 
     public void TeleportPlayerToExit()
     {
-        player.transform.position = exitPosition + Vector3.up * 1;
+        player.transform.position = GameObject.FindGameObjectWithTag("Exit").transform.position + Vector3.up * 1;
     }
 
     public void TeleportPlayerThroughCheckpoints()

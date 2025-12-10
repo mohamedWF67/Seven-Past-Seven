@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -18,9 +19,8 @@ public class GameManagerScript : MonoBehaviour
     
     [Header("Act")]
     [SerializeField] GameObject actFinishedUI;
-    
-    [SerializeField] private int currentSceneIndex;
     [SerializeField] private List<SceneAsset> scenes;
+    public int currentSceneIndex;
     Coroutine loadNextActCoroutine;
 
     #region SCORE AREA
@@ -40,7 +40,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private float totalScore;
     #endregion
     
-    [HideInInspector] public bool inUI = false;
+    [HideInInspector] public bool inUI;
     
     #region ITEMS
     
@@ -60,7 +60,11 @@ public class GameManagerScript : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        
         pauseAction = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Exit");
+
+        //* Gets the number out of the scene name.
+        currentSceneIndex = int.Parse(new string(SceneManager.GetActiveScene().name.Where(char.IsDigit).ToArray())) - 1;
     }
 
     private void Update()
@@ -116,7 +120,7 @@ public class GameManagerScript : MonoBehaviour
         actFinishedUI.SetActive(false);
         SceneManager.LoadScene(scenes[currentSceneIndex + 1].name);
         currentSceneIndex++;
-        
+        loadNextActCoroutine = null;
     }
 
     #region ITEMS FUNCTIONS
