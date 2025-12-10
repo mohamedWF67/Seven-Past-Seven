@@ -112,4 +112,9 @@ public class DialogueSystem : MonoBehaviour
         if(dialogueBox != null) dialogueBox.SetActive(false);
         GameManagerScript.instance.inUI = false;
     }
+
+    public void SkipToEnd()
+    {
+        while (lineIndex < lines.Count - 1) NextLine();
+    }
 }

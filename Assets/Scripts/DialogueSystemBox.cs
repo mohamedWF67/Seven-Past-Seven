@@ -42,6 +42,14 @@ public class DialogueSystemBox : MonoBehaviour
         currentDS.NextLine();
     }
 
+    public void SkipToEnd()
+    {
+        if (currentDS != null)
+        {
+            currentDS.SkipToEnd();
+        }
+    }
+
     public void UpdateText(String text)
     {
         dialogueText.text = text;
