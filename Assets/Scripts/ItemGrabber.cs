@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemGrabber : MonoBehaviour
 {
     private HealthSystem hs;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         hs = GetComponent<HealthSystem>();
@@ -12,27 +12,36 @@ public class ItemGrabber : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //* if other is not a collectable skip.
         if (!other.gameObject.CompareTag("Collectables")) return;
+        //* Try to get the Item.
+        other.TryGetComponent(out Item itemToGrab);
+        //* If item not found skip.
+        if (itemToGrab == null) return;
         
-        if (other.gameObject.GetComponent<Item>() == null) return;
-        
-        Item item = other.gameObject.GetComponent<Item>();
-        Debug.Log($"Item Collected : {item.GetItemType()}");
-        switch (item.GetItemType())
+        Debug.Log($"Item Collected : {itemToGrab.GetItemType()}");
+        //* Play the pickup sound.
+        SoundFXManagerScript.instance.PlaySFXSound(itemToGrab.pickupSound, transform);
+        //* Switches based on the item's type.
+        switch (itemToGrab.GetItemType())
         {
             case 0:
-                NotificationTextScript.instance.ShowNotification($"Coins : {item.value}");
-                GameManagerScript.instance.AddCoin(item.value);
+                //* Adds a coin.
+                NotificationTextScript.instance.ShowNotification($"You have acquired a coin.");
+                GameManagerScript.instance.AddCoin(itemToGrab.value);
                 break;
             case 1:
-                NotificationTextScript.instance.ShowNotification($"Health : {item.value}");
-                hs.Heal(item.value);
+                //* Heals the player.
+                NotificationTextScript.instance.ShowNotification($"Health +{itemToGrab.value}");
+                hs.Heal(itemToGrab.value);
                 break;
             case 2:
+                //* Adds an artifact.
                 NotificationTextScript.instance.ShowNotification($"You have acquired an artifact.");
                 GameManagerScript.instance.AddArtifact();
                 break;
         }
+        //* Destroys the Item after pickup.
         Destroy(other.gameObject);
     }
 }

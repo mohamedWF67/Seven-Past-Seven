@@ -22,13 +22,7 @@ public class CameraShake : MonoBehaviour
 
     public void Shake()
     {
-        if (shakeCoroutine != null)
-        {
-            StopCoroutine(shakeCoroutine);
-            shakeCoroutine = StartCoroutine(DoShake());
-        }else
-            shakeCoroutine = StartCoroutine(DoShake());
-        
+        Shake(shakeIntensity,shakeFrequency,shakeDuration);
     }
     
     public void Shake(float shakeAmount,float shakeFreq,float duration = 0)
@@ -43,14 +37,8 @@ public class CameraShake : MonoBehaviour
 
     IEnumerator DoShake()
     {
-        Debug.Log("Heez ya wiz");
-        noise.AmplitudeGain = shakeIntensity;
-        noise.FrequencyGain = shakeFrequency;
-        
+        DoShake(shakeIntensity,shakeFrequency,shakeDuration);
         yield return new WaitForSeconds(shakeDuration);
-        
-        noise.AmplitudeGain = 0;
-        noise.FrequencyGain = 0;
     }
 
     IEnumerator DoShake(float shakeAmount,float shakeFreq,float duration = 0)

@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class DialogueSystemBox : MonoBehaviour
 {
-    public static DialogueSystemBox instance;
-    
     private DialogueSystem currentDS;
-    private TextMeshProUGUI dialogueText;
+    [SerializeField]private TextMeshProUGUI dialogueText;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        
         dialogueText = GetComponentInChildren<TextMeshProUGUI>();
     }
 

@@ -133,9 +133,6 @@ public class PlayerMovementScript : MonoBehaviour
     [Tooltip("The distance of the player's dash.")]
     [SerializeField] float dashDistance = 5;
     
-    [Tooltip("If the dash key is being held.")]
-    [SerializeField] bool dashHeld;
-    
     [Tooltip("If a dashing force is being applied.")]
     public bool dashing;
     
@@ -180,17 +177,32 @@ public class PlayerMovementScript : MonoBehaviour
  
     #endregion
     
-    #region Audioclips
-    [Header("AudioClips")]
+    #region AUDIO
+    [Header("Audio Source")]
+    [Tooltip("Player's audio source.")]
+    [SerializeField] AudioSource audioSource;
+    [Header("Audio Clips")]
+    [Tooltip("Sound of the player moving on ground")]
+    [SerializeField] AudioClip moveClip;
+    [Tooltip("Sound of the player jumping.")]
     [SerializeField] AudioClip jumpClip;
+    [Tooltip("Sound of the player Dashing.")]
     [SerializeField] AudioClip dashClip;
+
+    private Coroutine groundMovingCoroutine;
     #endregion
 
+    #region ANIMATION
+    [Header("Animations")]
+    [Tooltip("The player's animation controller.")]
+    [SerializeField] private Animator playerAnimator;
+
+    #endregion
+    
     #region EXPERIMENTATION
 
     [Header("Experimentation")] 
-    [SerializeField] private Animator playerAnimator;
-    public string currentControlScheme;
+    
     #endregion
     
     #region COMPONENTS
@@ -211,12 +223,7 @@ public class PlayerMovementScript : MonoBehaviour
     #endregion
     
     #region LAYERS & TAGS
-    
-    [Header("Layers & Tags")]
-    
-    [Tooltip("Ground layer")]
-    [SerializeField] LayerMask _groundLayer;
-    
+    LayerMask _groundLayer;
     #endregion
 
     #region ON VALIDATE
@@ -266,12 +273,9 @@ public class PlayerMovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         PlayerInput = GetComponent<PlayerInput>();
         
-        currentControlScheme = PlayerInput.currentControlScheme;
-
-        // Subscribe to the event that triggers when control scheme changes
-        PlayerInput.onControlsChanged += OnControlsChanged;
-        
         playerAnimator = GetComponent<Animator>();
+        
+        audioSource = GetComponent<AudioSource>();
         
         dustTrail = GetComponentInChildren<ParticleSystem>();
         TR = GetComponentInChildren<TrailRenderer>();
@@ -287,7 +291,7 @@ public class PlayerMovementScript : MonoBehaviour
         checkCollisions();
         if (canMove && !GameManagerScript.instance.inUI)
         {
-            jump();
+            Jump();
             Flip();
         }
     }
@@ -300,7 +304,6 @@ public class PlayerMovementScript : MonoBehaviour
     {
         _moveInput = moveAction.ReadValue<Vector2>();
         jumpHeld = jumpAction.IsPressed();
-        dashHeld = dashAction.IsPressed();
     }
     
     #endregion
@@ -331,7 +334,7 @@ public class PlayerMovementScript : MonoBehaviour
     
     #region JUMP ACTION
     
-    private void jump()
+    private void Jump()
     {
         if (jumpHeld) 
             lastJumpPressedTime = Time.time; //* Stamps the jump time.
@@ -350,16 +353,20 @@ public class PlayerMovementScript : MonoBehaviour
             if (isWalled)
             {   //* If walled and !grounded, execute wall jump.
                 StartCoroutine(WallJumpCoroutine(dir));
+                //* Play a sound when jumping.
+                SoundFXManagerScript.instance.PlaySFXSound(jumpClip,transform);
+                
                 return; //* Stops so it doesn't execute a normal jump.
             }
             
             isJumping = true;
             targetHeight = rb.position.y + jumpHeight;  //* Calculates target height Y position.
-            CreateDustTrail();
+            CreateDustTrail();//* play Dust effect.
+            SoundFXManagerScript.instance.PlaySFXSound(jumpClip,transform);//* Play jump Sound.
             timeSinceJump = Time.time;                  //* Stamps time since the jump key was pressed.
             timeToApex = TimeToApexFromHeight(jumpHeight, rb); //* Stores time to apex.
         }
-        
+        //* Checks if the player has reached the apex.
         bool reachedApex = Time.time > timeSinceJump + timeToApex;
         
         //* Cancels jumping force if the jump key is unpressed or the player has reached the apex.
@@ -368,7 +375,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         //* Executes jump.
         if (isJumping)
-            Dojump();
+            DoJump();
 
         //* Slows down the player after jump.
         if (!jumpHeld && rb.linearVelocity.y > 0f && !dashing)
@@ -381,6 +388,26 @@ public class PlayerMovementScript : MonoBehaviour
     
     #endregion
 
+    #region DO JUMP 
+
+    void DoJump()
+    {
+        //* Get the G force acting on player.
+        float g = Mathf.Abs(Physics2D.gravity.y) * rb.gravityScale;
+        //* Get the initial force acting on player.
+        float v0 = Mathf.Sqrt(2f * g * jumpHeight);
+        
+        //* Resets the players Y velocity if falling.
+        if (rb.linearVelocity.y < 0f)
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        
+        //* Calculate the force required for the jump.
+        float impulse = rb.mass * (v0 - rb.linearVelocity.y);
+        rb.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
+    }    
+
+    #endregion
+    
     #region  WALL JUMP
     
     IEnumerator WallJumpCoroutine(int dir)
@@ -417,26 +444,6 @@ public class PlayerMovementScript : MonoBehaviour
     }
     
     #endregion
-
-    #region DO JUMP 
-
-    void Dojump()
-    {
-        //* Get the G force acting on player.
-        float g = Mathf.Abs(Physics2D.gravity.y) * rb.gravityScale;
-        //* Get the initial force acting on player.
-        float v0 = Mathf.Sqrt(2f * g * jumpHeight);
-        
-        //* Resets the players Y velocity if falling.
-        if (rb.linearVelocity.y < 0f)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-        
-        //* Calculate the force required for the jump.
-        float impulse = rb.mass * (v0 - rb.linearVelocity.y);
-        rb.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
-    }    
-
-    #endregion
     
     #region FIXED UPDATE
    
@@ -446,6 +453,9 @@ public class PlayerMovementScript : MonoBehaviour
             dash();
         run();
         fall();
+
+        PlayerAnimation();
+        PlayerSounds();
     }
 
     #endregion
@@ -488,7 +498,7 @@ public class PlayerMovementScript : MonoBehaviour
     #region DASH
     void dash()
     {
-        if (dashHeld && canDash && !dashing && dashFinished)
+        if (dashAction.triggered && canDash && !dashing && dashFinished)
             StartCoroutine(doDash());
     }
 
@@ -552,13 +562,44 @@ public class PlayerMovementScript : MonoBehaviour
     private void Flip()
     {
         sp.flipX = _moveInput.x < 0;
-        playerAnimator.SetBool("IsRunning",isGrounded && _moveInput.x != 0);
-        playerAnimator.SetBool("IsJumping",!isGrounded);
-
     }
 
     #endregion
+    
+    #region SOUNDS
+    void PlayerSounds()
+    {
+        //TODO Change to a more advanced way.
+        if (isGrounded && _moveInput.x != 0)
+        {
+            if (groundMovingCoroutine != null) return;
+            groundMovingCoroutine = StartCoroutine(MovingSound());
+        }else if (groundMovingCoroutine != null)
+        {
+            StopCoroutine(groundMovingCoroutine);
+            groundMovingCoroutine = null;
+        }
+    }
 
+    IEnumerator MovingSound()
+    {
+        while (true)
+        {
+            audioSource.PlayOneShot(moveClip);
+            yield return new WaitForSeconds(moveClip.length);
+        }
+    }
+    #endregion
+    
+    #region ANIMATION
+   
+    void PlayerAnimation()
+    {
+        playerAnimator.SetBool("IsRunning",isGrounded && _moveInput.x != 0);
+        playerAnimator.SetBool("IsJumping",!isGrounded);
+    }
+    #endregion
+    
     #region DUST EFFECT
     void CreateDustTrail()
     {
@@ -566,17 +607,6 @@ public class PlayerMovementScript : MonoBehaviour
         dustTrail.Play();
     }
     #endregion
-    
-    private void OnControlsChanged(PlayerInput obj)
-    {
-        currentControlScheme = obj.currentControlScheme;
-        Debug.Log("Current Input Scheme: " + currentControlScheme);
-    }
-    
-    void OnDestroy()
-    {
-        PlayerInput.onControlsChanged -= OnControlsChanged;
-    }
 
     void OnDrawGizmosSelected()
     {

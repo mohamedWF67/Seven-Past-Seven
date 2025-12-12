@@ -43,29 +43,28 @@ public class FullScreenEffectScript : MonoBehaviour
     IEnumerator StartTween()
     {
         transform.SetAsLastSibling();
-        if (fadeStyle == FadeStyleEnum.Normal)
+        switch (fadeStyle)
         {
-            material.SetFloat("_VignettePower", 0);
-            LeanTween.value(gameObject, 0, 1, blinkTime)
-                .setEase(LeanTweenType.easeInOutCubic)
-                .setLoopPingPong(1)
-                .setOnUpdate(val =>
-                {
-                    c = eyeBlink.color;
-                    c.a = val;
-                    eyeBlink.color = c;
-                });
-        }
-        else
-        {
-            c = eyeBlink.color; c.a = 1; eyeBlink.color = c;
-            LeanTween.value(gameObject, 1, 0, blinkTime)
-                .setEase(LeanTweenType.easeInOutCubic)
-                .setLoopPingPong(1)
-                .setOnUpdate(val =>
-                {
-                    material.SetFloat("_VignettePower", val);
-                });
+            case FadeStyleEnum.Normal:
+                material.SetFloat("_VignettePower", 0);
+                LeanTween.value(gameObject, 0, 1, blinkTime)
+                    .setEase(LeanTweenType.easeInOutCubic)
+                    .setLoopPingPong(1)
+                    .setOnUpdate(val =>
+                    {
+                        eyeBlink.color = new Color(eyeBlink.color.r,eyeBlink.color.g,eyeBlink.color.b,val);
+                    });
+                break;
+            case FadeStyleEnum.Eye:
+                c = eyeBlink.color; c.a = 1; eyeBlink.color = c;
+                LeanTween.value(gameObject, 1, 0, blinkTime)
+                    .setEase(LeanTweenType.easeInOutCubic)
+                    .setLoopPingPong(1)
+                    .setOnUpdate(val =>
+                    {
+                        material.SetFloat("_VignettePower", val);
+                    });
+                break;
         }
         yield return new WaitForSeconds(blinkTime * 2);
         //Debug.Log("Done");

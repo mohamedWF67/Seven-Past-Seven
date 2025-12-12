@@ -44,9 +44,9 @@ public class AbilityMenuUI : MonoBehaviour
         }
         
         if (abilityCooldown < 1f)
-            abilityIcon.color = new Color(1f,1f,1f,0.2f);
+            abilityIcon.color = new Color(abilityIcon.color.r,abilityIcon.color.g,abilityIcon.color.b,0.2f);
         if (passiveCooldown < 1f)
-            passiveIcon.color = new Color(1f,1f,1f,0.2f);
+            passiveIcon.color = new Color(passiveIcon.color.r,passiveIcon.color.g,passiveIcon.color.b,0.2f);
         
         abilityCooldown = ss.abilityCooldown;
         passiveCooldown = ss.passiveCooldown;
@@ -58,8 +58,8 @@ public class AbilityMenuUI : MonoBehaviour
         passiveIcon.sprite = ss.GetPassiveImage();
         
         if (abilityCooldown >= 1f)
-            abilityIcon.color = new Color(1f,1f,1f,1f);
+            abilityIcon.color = new Color(abilityIcon.color.r,abilityIcon.color.g,abilityIcon.color.b,1f);
         if (passiveCooldown >= 1f)
-            passiveIcon.color = new Color(1f,1f,1f,1f);
+            passiveIcon.color = new Color(passiveIcon.color.r,passiveIcon.color.g,passiveIcon.color.b,1f);
     }
 }

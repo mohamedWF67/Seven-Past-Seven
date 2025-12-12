@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class ShootingScript : MonoBehaviour
 {
+    [SerializeField] private GameObject marker;
     Camera cam;
     private Vector3 mousePos;
     bool isFiring;
@@ -36,7 +37,6 @@ public class ShootingScript : MonoBehaviour
     Coroutine firingCoroutine;
     Coroutine abilityCoroutine;
     
-    
     public float abilityCooldown = 1f;
     public float passiveCooldown = 1f;
     
@@ -51,6 +51,8 @@ public class ShootingScript : MonoBehaviour
 
     private void Update()
     {
+        marker.SetActive(canFire);
+        
         if (GameManagerScript.instance.inUI) return;
         
         ActionChecks();

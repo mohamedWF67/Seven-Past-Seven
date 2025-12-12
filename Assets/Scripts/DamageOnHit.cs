@@ -7,16 +7,23 @@ public class DamageOnHit : MonoBehaviour
     [SerializeField] private int damage = 50;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var hitDir = transform.position - other.transform.position;
-            hitDir.Normalize();
-            
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force / 2 * Time.deltaTime, ForceMode2D.Impulse);
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(-hitDir * force * Time.deltaTime, ForceMode2D.Impulse);
-            
-            other.gameObject.TryGetComponent(out HealthSystem hs);
-            hs.GiveDamage(damage);
-        }
+        //* if the other is not the player skip.
+        if (!other.gameObject.CompareTag("Player")) return;
+        
+        //* Gets the direction of the player relative to the GameObject.
+        Vector2 hitDir = transform.position - other.transform.position;
+        //* Normalizes the direction to make it be either 1 or 0.
+        hitDir.Normalize();
+        //* Multiply the direction with force.
+        hitDir *= force;
+        //* Apply a vertical force.
+        other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force / 2 * Time.deltaTime, ForceMode2D.Impulse);
+        //* Apply an apposing force in the opposite direction.
+        other.gameObject.GetComponent<Rigidbody2D>().AddForce(-hitDir * Time.deltaTime, ForceMode2D.Impulse);
+        //* Try to get the health System of the player.
+        other.gameObject.TryGetComponent(out HealthSystem hs);
+        //* Damage the player.
+        hs.GiveDamage(damage);
+        
     }
 }

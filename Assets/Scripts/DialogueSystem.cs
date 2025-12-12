@@ -9,7 +9,6 @@ public class DialogueSystem : MonoBehaviour
 {
     public GameObject dialogueBox;
     public DialogueSystemBox dsBox;
-    public TextMeshProUGUI dialogueText;
     
     public List<string> lines;
     public int lineIndex;
@@ -29,7 +28,6 @@ public class DialogueSystem : MonoBehaviour
 
     private void Awake()
     {
-        dsBox = dialogueBox.GetComponent<DialogueSystemBox>();
         skipBtn = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Skip");
         escapeBtn = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Exit");
     }
@@ -44,30 +42,24 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue()
     {
-        try
-        {
-            if (isDialogueFinished) return;
-            isInDialogue = true;
-            GameManagerScript.instance.inUI = true;
-            dsBox.SetDialogueSystem(this);
-            dialogueBox.SetActive(true);
-            lineIndex = 0;
-            StartCoroutine(Type());
-        }
-        catch
-        {
-            Debug.Log("Dialogue not set");
-        }
+        if (isDialogueFinished) return;
+        
+        dsBox = Instantiate(dialogueBox).GetComponentInChildren<DialogueSystemBox>();
+        isInDialogue = true;
+        GameManagerScript.instance.inUI = true;
+        dsBox.SetDialogueSystem(this);
+        lineIndex = 0;
+        StartCoroutine(Type());
     }
 
     public void NextLine()
     {
-        if (dialogueText.text == lines[lineIndex])
+        if (dsBox.IsEqualTo(lines[lineIndex]))
         { 
             if (lineIndex < lines.Count - 1)
             {
                 lineIndex ++;
-                dialogueText.text = "";
+                dsBox.ClearText();
                 StartCoroutine(Type());
             }
             else
@@ -79,7 +71,7 @@ public class DialogueSystem : MonoBehaviour
         }else
         {
             StopAllCoroutines();
-            dialogueText.text = lines[lineIndex];
+            dsBox.UpdateText(lines[lineIndex]);
         }
     }
 
@@ -93,10 +85,10 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueSound != null)
             AudioSource.PlayClipAtPoint(dialogueSound, transform.position);
         
-        dialogueText.text = "";
+        dsBox.ClearText();
         foreach (char letter in lines[lineIndex])
         {
-            dialogueText.text += letter;
+            dsBox.AddLetter(letter);
             yield return new WaitForSeconds(speed);
         }
         
@@ -104,13 +96,15 @@ public class DialogueSystem : MonoBehaviour
     
     public void CancelDialogue()
     {
+        if (!isInDialogue) return;
+        
         isInDialogue = false;
         StopAllCoroutines();
-        dsBox.ResetDialogueSystem();
         lineIndex = 0;
-        dialogueText.text = "";
-        if(dialogueBox != null) dialogueBox.SetActive(false);
+        dsBox.ClearText();
         GameManagerScript.instance.inUI = false;
+        Destroy(dsBox.gameObject.transform.parent.gameObject);
+        dsBox = null;
     }
 
     public void SkipToEnd()

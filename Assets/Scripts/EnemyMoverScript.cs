@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMoverScript : MonoBehaviour
 {
-    
+    [Header("Settings")]
     [SerializeField] private float speed;
     [SerializeField] private float distance;
     
@@ -28,25 +28,26 @@ public class EnemyMoverScript : MonoBehaviour
         //* Calculates the start and end points.
         startPosition = platformPosition +
                         distance * Vector3.left;
+        
         endPosition = platformPosition +
                       distance * Vector3.right;
+        //* Sets the next position to the end position so the player starts moving towards it.
         nextPosition = endPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //* Moves the platform using MoveTowards.
+        //* Moves the enemy using MoveTowards.
         rb.transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
+        
         if (transform.position == nextPosition)
         {   //* Switches the next position.
             nextPosition = nextPosition == startPosition ? endPosition : startPosition;
         }
 
-        if (nextPosition == startPosition)
-            sr.flipX = true;
-        else
-            sr.flipX = false;
+        //* Flips the sprite renderer so the enemy appears correctly.
+        sr.flipX = nextPosition == startPosition;
     }
 
     private void OnValidate()

@@ -12,12 +12,7 @@ public class Item : MonoBehaviour
     }
     public ItemType itemType;
     public int value = 1;
-
-    public string Type()
-    {
-        Debug.Log(itemType.ToString());
-        return itemType.ToString();
-    }
+    public AudioClip pickupSound;
 
     public int GetItemType()
     {
