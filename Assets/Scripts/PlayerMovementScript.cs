@@ -280,6 +280,8 @@ public class PlayerMovementScript : MonoBehaviour
         dustTrail = GetComponentInChildren<ParticleSystem>();
         TR = GetComponentInChildren<TrailRenderer>();
         sp = GetComponent<SpriteRenderer>();
+        
+        _groundLayer = LayerMask.GetMask("Ground");
     }
     
     #endregion
