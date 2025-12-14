@@ -32,7 +32,8 @@ public class DevMenuHelper : MonoBehaviour
         DevModeMethod();
     }
     
-    void CheckReferences()
+   
+void CheckReferences()
     {
         if (allReferencesSet) return;
         

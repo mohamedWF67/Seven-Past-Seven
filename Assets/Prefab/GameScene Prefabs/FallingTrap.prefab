@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 6
   playerDamage: 50
+  fallingMass: 1
+  fallingGravityScale: 1
 --- !u!60 &6287788232731170339
 PolygonCollider2D:
   m_ObjectHideFlags: 0
