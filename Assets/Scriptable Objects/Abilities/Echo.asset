@@ -19,7 +19,7 @@ MonoBehaviour:
   duration: 5
   delayTime: 0
   isStaticAbility: 1
-  tickRate: 1
+  tickRate: 0.5
   isSticky: 0
   canDamagePlayer: 0
   canPathThroughWalls: 1

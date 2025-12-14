@@ -31,7 +31,7 @@ public class SoundFXManagerScript : MonoBehaviour
     {
         //* Set's the clip to the background music's audio clip.
         backgroundMusicSource.clip = backgroundMusic;
-        //* Plays the audio source with teh background music.
+        //* Plays the audio source with the background music.
         backgroundMusicSource.Play();
     }
 
