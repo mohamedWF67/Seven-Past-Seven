@@ -598,7 +598,9 @@ public class PlayerMovementScript : MonoBehaviour
     void PlayerAnimation()
     {
         playerAnimator.SetBool("IsRunning",isGrounded && _moveInput.x != 0);
-        playerAnimator.SetBool("IsJumping",!isGrounded);
+        playerAnimator.SetBool("IsJumping",!isGrounded && !dashing);
+        //playerAnimator.SetBool("IsWallJumping",wallJump);
+        playerAnimator.SetBool("IsDashing",dashing);
     }
     #endregion
     
