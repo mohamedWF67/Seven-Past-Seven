@@ -13,6 +13,7 @@ public class SettingsScript : MonoBehaviour
 
     private void Start()
     {
+        //* Sets the volume for all sliders from the saved PlayerPrefs.
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume");
         UISlider.value = PlayerPrefs.GetFloat("UIVolume");
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
@@ -21,12 +22,14 @@ public class SettingsScript : MonoBehaviour
     
     public void ChangeMasterVolume()
     {
+        //* Sets the volume for the master slider.
         float volume = masterSlider.value;
         am.SetFloat("MasterMixerVolume",volume);
         PlayerPrefs.SetFloat("MasterVolume", volume);
     }
     public void ChangeUISlider()
     {
+        //* Sets the volume for the UI slider.
         float volume = UISlider.value;
         am.SetFloat("UIMixerVolume", volume);
         PlayerPrefs.SetFloat("UIVolume", volume);
@@ -34,12 +37,14 @@ public class SettingsScript : MonoBehaviour
     
     public void ChangeSFXSlider()
     {
+        //* Sets the volume for the SFX slider.
         float volume = SFXSlider.value;
         am.SetFloat("SFXMixerVolume", volume);
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
     public void ChangeMusicSlider()
     {
+        //* Sets the volume for the music slider.
         float volume = musicSlider.value;
         am.SetFloat("MusicMixerVolume", volume);
         PlayerPrefs.SetFloat("MusicVolume", volume);

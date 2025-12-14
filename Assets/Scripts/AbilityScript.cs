@@ -23,6 +23,7 @@ public class AbilityScript : MonoBehaviour
     Coroutine abilityCoroutine;
     private void Awake()
     {
+        //* Sets all the required references.
         HitLayer = LayerMask.GetMask("Enemy");
         BlockExplosionLayer = LayerMask.GetMask("Ground");
         ps = GetComponent<ParticleSystem>();
@@ -38,46 +39,50 @@ public class AbilityScript : MonoBehaviour
             babyps = child.GetComponent<ParticleSystem>();
         }
         
+        //* Starts the ability coroutine.
         abilityCoroutine = StartCoroutine(TriggerAbility());
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //* If the ability is sticky, it will stick to the ground or enemies.
         if(!abilityType.isSticky) return;
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy")){
-            
+            //* Sets the projectile's parent to the other object.
             gameObject.transform.parent = other.gameObject.transform;
-            
+            //* Stops the projectile's movement.
             rb.linearVelocity = Vector2.zero;
+            //* Sets the rigid body to kinematic to prevent it from moving.
             if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
-            
         }
     }
 
     IEnumerator TriggerAbility(bool isInstant = false)
     {
+        //* Waits for 0.05 seconds to prevent the ability from running before getting all the references.
         yield return new WaitForSeconds(0.05f);
-        
+        //* Waits for the ability's delay time.
         if (!isInstant)
             yield return new WaitForSeconds(abilityType.delayTime);
-        
+        //* Plays the ability particle system.
         if (ps != null) ps.Play();
-        
+        //* Disable the sprite renderer
         if (sr != null) sr.enabled = false;
 
+        //* Stops the projectile's movement.
         rb.linearVelocity = Vector2.zero;
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
-        
+        //* Disable the collider
         if (coll != null) coll.enabled = false;
         
-        
+        //* Starts the light effect.
         if (_light != null)
         {
             _light.enabled = true;
             LeanTween.value(gameObject,0,abilityType.Intenisty,abilityType.duration / 4).setEase(LeanTweenType.easeOutExpo).setOnUpdate(val=>_light.intensity = val);
             LeanTween.value(gameObject,abilityType.Intenisty,0,abilityType.duration / 4).setEase(LeanTweenType.easeInExpo).setOnUpdate(val=>_light.intensity = val);
         }
-        
+        //* Stops the moving effect particles light.
         if (babyLight != null)
         {
             float intensity = babyLight.intensity;
@@ -89,57 +94,64 @@ public class AbilityScript : MonoBehaviour
                 }
             ).setEase(LeanTweenType.easeOutSine);
         }
+        //* Stops the moving effect particles.
         if (babyps != null)
         {
             var emission = babyps.emission;
             emission.enabled = false;
         }
-
+        //* If enabled waits for the delay effect time that prevents the enemy from getting damaged before the particles reach it.
         if (abilityType.delayffect > 0)
             yield return new WaitForSeconds(abilityType.delayffect);
-        if (!abilityType.isStaticAbility)
-            GetEnemiesInRange();
-        else
-            StartCoroutine(DamageOverTime());
-
+        if (!abilityType.isStaticAbility)               //* ///////////////////////////////////////////////////////////////*//
+            GetEnemiesInRange();                        //*     if the ability is static then it deals damage over time.   *//
+        else                                            //*     else then it deals damage instantly.                       *//
+            StartCoroutine(DamageOverTime());     //* ///////////////////////////////////////////////////////////////*//
+        //* Waits for the ability duration.
         yield return new WaitForSeconds(abilityType.duration);
+        //* Destroys the ability's game object.
         Destroy(gameObject);
-        
+        //* Resets the ability coroutine.
         abilityCoroutine = null;
 
     }
 
     IEnumerator DamageOverTime()
     {
+        //* Deals damage to enemies in range according to the tick rate.
         while (true)
-        {
+        {   //* Gets all the enemies in range.
             GetEnemiesInRange();
+            //* Waits for the ability tick rate.
             yield return new WaitForSeconds(abilityType.tickRate);
         }
     }
     
     void GetEnemiesInRange()
     {
+        //* Gets all the enemies in range.
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, abilityType.range, HitLayer);
         
         foreach (Collider2D hit in hits)
         {
+            //* makes sure that it doesn't hit itself.
             if (hit == null) continue;
-            
+            //* Grabs the enemy's health system.
             HealthSystem enemy = hit.GetComponent<HealthSystem>();
-            
+            //* Checks if the enemy exists.
             if (enemy == null) continue;
-
+            //* If the ability can path through walls, it will not check for blocks.
             if (!abilityType.canPathThroughWalls)
             {
+                //* Calculates the direction of the raycast.
                 Vector2 direction = hit.transform.position - transform.position;
-
+                //* Checks if there is a block in the way.
                 RaycastHit2D blockCheck = Physics2D.Raycast(transform.position, direction.normalized,
                     direction.magnitude, BlockExplosionLayer);
-
+                //* If there is a block in the way, it will not deal damage.
                 if (blockCheck.collider != null) continue;
             }
-
+            //* Deals damage to the enemy.
             enemy.GiveDamage(abilityType.damage);
             
         }
