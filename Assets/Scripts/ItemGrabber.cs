@@ -18,8 +18,6 @@ public class ItemGrabber : MonoBehaviour
         other.TryGetComponent(out Item itemToGrab);
         //* If item not found skip.
         if (itemToGrab == null) return;
-        
-        Debug.Log($"Item Collected : {itemToGrab.GetItemType()}");
         //* Play the pickup sound.
         if (itemToGrab.pickupSound != null)
             SoundFXManagerScript.instance.PlaySFXSound(itemToGrab.pickupSound, transform);
