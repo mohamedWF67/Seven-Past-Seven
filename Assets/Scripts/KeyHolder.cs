@@ -16,6 +16,7 @@ public class KeyHolder : MonoBehaviour
             keyIndexs.Add(index);
             Debug.Log($"Key Collected : {index}");
             NotificationTextScript.instance.ShowNotification($"Key Collected : {index}");
+            GameManagerScript.instance.AddKey();
             if (destroyOnCollect)
             {
                 Destroy(other.gameObject);

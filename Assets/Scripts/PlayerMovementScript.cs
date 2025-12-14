@@ -500,7 +500,7 @@ public class PlayerMovementScript : MonoBehaviour
     #region DASH
     void dash()
     {
-        if (dashAction.triggered && canDash && !dashing && dashFinished)
+        if (dashAction.IsPressed() && canDash && !dashing && dashFinished)
             StartCoroutine(doDash());
     }
 

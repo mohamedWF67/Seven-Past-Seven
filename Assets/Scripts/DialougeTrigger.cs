@@ -11,7 +11,8 @@ public class DialougeTrigger : MonoBehaviour
     void Start()
     {
         ds = GetComponent<DialogueSystem>();
-        sr = transform.parent.GetComponentInChildren<SpriteRenderer>();
+        if (isAGhost)
+            sr = transform.parent.GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
