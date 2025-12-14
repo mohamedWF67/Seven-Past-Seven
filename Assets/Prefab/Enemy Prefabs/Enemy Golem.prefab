@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7048621531281690866}
   - component: {fileID: 705941541073979813}
   - component: {fileID: 1119760318596252048}
-  - component: {fileID: 6789020092822843023}
   - component: {fileID: 2586565378885568751}
   - component: {fileID: 6994346004118484889}
   m_Layer: 9
@@ -131,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   wasDamaged: 0
+  showHealthBar: 0
   enemyHealthBar: {fileID: 7210905573847035838, guid: b4dba04402c660d4eb44045ca3b5d7e9, type: 3}
   SpawnedHealthBar: {fileID: 0}
   maxHealth: 150
@@ -239,18 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   distance: 3.5
---- !u!114 &6789020092822843023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7612569652514138661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4652c5d3baa97d44d8ff7567030d6dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2586565378885568751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 100
+  damage: 50
 --- !u!114 &6994346004118484889
 MonoBehaviour:
   m_ObjectHideFlags: 0
