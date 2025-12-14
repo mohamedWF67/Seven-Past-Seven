@@ -168,7 +168,7 @@ public class GameManagerScript : MonoBehaviour
             artifactCount++;
             //* Adds a double scored point.
             AddScoreFromPoints(2);
-        }
+        }else Debug.Log("You already have the maximum amount of artifacts.");
     }
 
     public void AddCoin(int weight = 1)
