@@ -12,7 +12,10 @@ public class DialougeTrigger : MonoBehaviour
     {
         ds = GetComponent<DialogueSystem>();
         if (isAGhost)
+        {
             sr = transform.parent.GetComponentInChildren<SpriteRenderer>();
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
