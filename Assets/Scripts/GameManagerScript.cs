@@ -206,10 +206,4 @@ public class GameManagerScript : MonoBehaviour
         currentControlScheme = obj.currentControlScheme;
         Debug.Log("Current Input Scheme: " + currentControlScheme);
     }
-    
-    void OnDestroy()
-    {
-        //* Honestly no clue why i wrote this bs im scared to remove it.
-        PlayerInput.GetPlayerByIndex(0).onControlsChanged -= OnControlsChanged;
-    }
 }
