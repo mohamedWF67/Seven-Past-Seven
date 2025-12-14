@@ -8,9 +8,13 @@ public class PlayerBounce : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //* Grabs the player's rigid body.
             Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
+            //* Calculates the gravity force.
             float g = Mathf.Abs(Physics2D.gravity.y) * rb.gravityScale;
+            //* Calculates the bounce force acting on player.
             float v0 = Mathf.Sqrt(2f * g * bounceHeight) * rb.mass;
+            //* Applies the force to player.
             rb.AddForce(Vector2.up *  v0, ForceMode2D.Impulse);
         }
     }
