@@ -6,6 +6,7 @@ public class KeyHolder : MonoBehaviour
 {
     public List<int> keyIndexs;
     [SerializeField] bool destroyOnCollect = true;
+    [SerializeField] AudioClip keyPickupClip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +18,7 @@ public class KeyHolder : MonoBehaviour
             Debug.Log($"Key Collected : {index}");
             NotificationTextScript.instance.ShowNotification($"Key Collected : {index}");
             GameManagerScript.instance.AddKey();
+            SoundFXManagerScript.instance.PlaySFXSound(keyPickupClip, transform);
             if (destroyOnCollect)
             {
                 Destroy(other.gameObject);
