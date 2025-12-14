@@ -12,5 +12,6 @@ public class UIHelper : MonoBehaviour
         textList[0].text = GameManagerScript.instance.keyCount.ToString("000");
         textList[1].text = GameManagerScript.instance.coinCount.ToString("000");
         textList[2].text = GameManagerScript.instance.artifactCount.ToString("000");
+        //test
     }
 }
