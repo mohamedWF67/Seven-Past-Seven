@@ -291,6 +291,22 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 90830621fcf0dc447b055dd8673b9760, type: 3}
+  - {fileID: 8300000, guid: 570c4bca3f2d9d3439c56c5e85aac33b, type: 3}
+  - {fileID: 8300000, guid: f22ee27dcbaa2b949a7526cb86776693, type: 3}
+  - {fileID: 8300000, guid: 4910336780bffe6419a7bd21e4c6cccb, type: 3}
+  - {fileID: 8300000, guid: 17668313cdd24a042b7892f733d24209, type: 3}
+  - {fileID: 8300000, guid: 1ba3300a2cbaa3c46ba5c322466e06ca, type: 3}
+  - {fileID: 8300000, guid: 29f4be80095a34b448bf53d3e5df9f28, type: 3}
+  - {fileID: 8300000, guid: 04cf6e291aae73f41994af34cfb83f69, type: 3}
+  - {fileID: 8300000, guid: 0144bba8817e1f7488756be6f305e2f7, type: 3}
+  - {fileID: 8300000, guid: 4a2586ac094f21a4b8db1da34381c53d, type: 3}
+  - {fileID: 8300000, guid: 06387c9dcd8e9e34686c071d09116394, type: 3}
+  - {fileID: 8300000, guid: a978a92a8cf74c344834c888c2f6669f, type: 3}
+  - {fileID: 8300000, guid: 52be64c06e2c7e84399b4ee1f6b78cc2, type: 3}
+  - {fileID: 8300000, guid: fbad70361373d3e478cadb7ad03266ab, type: 3}
+  - {fileID: 8300000, guid: 6713622eab677874ba92cef9769055b2, type: 3}
 --- !u!114 &7346498467635778110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyIndexs: 
   destroyOnCollect: 1
+  keyPickupClip: {fileID: 8300000, guid: 787ae081f62e4cc42a5e95f7a56550bd, type: 3}
 --- !u!61 &1495876342806837323
 BoxCollider2D:
   m_ObjectHideFlags: 0

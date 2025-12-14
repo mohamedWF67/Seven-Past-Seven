@@ -152,6 +152,7 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
 --- !u!61 &7048621531281690866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 100
   damage: 50
+  hitSound: {fileID: 8300000, guid: 65d429389c129cd4782e64ec9f3e3322, type: 3}
 --- !u!114 &6994346004118484889
 MonoBehaviour:
   m_ObjectHideFlags: 0

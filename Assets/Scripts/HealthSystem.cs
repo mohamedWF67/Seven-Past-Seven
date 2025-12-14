@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -81,6 +82,10 @@ public class HealthSystem : MonoBehaviour
     private Material originalMaterial;
     private Coroutine damageCoroutine;
     private Coroutine shieldCoroutine;
+    
+    [Header("Sounds")]
+    [SerializeField] List<AudioClip> playerHitSounds;
+    [SerializeField] private AudioClip enemyhitSound;
     
     private void Awake()
     {
@@ -172,6 +177,7 @@ public class HealthSystem : MonoBehaviour
         {
             allHealth = 0;
             Kill();
+            return;
         }
         
         float health = allHealth % maxHealth;
@@ -185,6 +191,16 @@ public class HealthSystem : MonoBehaviour
         currentHealth = Mathf.RoundToInt(health);
         currentHearts = Mathf.FloorToInt(hearts);
 
+        if (isPlayer && playerHitSounds.Count > 0)
+        {
+            SoundFXManagerScript.instance.PlaySFXSound(playerHitSounds[UnityEngine.Random.Range(0,playerHitSounds.Count)], transform,0.8f);
+        }
+
+        if (!isPlayer && enemyhitSound != null)
+        {
+            SoundFXManagerScript.instance.PlaySFXSound(enemyhitSound, transform,0.8f);
+        }
+        
         if (!wasDamaged && !isPlayer && showHealthBar)
         {
             wasDamaged = true;

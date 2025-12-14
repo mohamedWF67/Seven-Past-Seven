@@ -5,6 +5,7 @@ public class DamageOnHit : MonoBehaviour
 {
     [SerializeField] private float force;
     [SerializeField] private int damage = 50;
+    [SerializeField] AudioClip hitSound;
     private void OnCollisionEnter2D(Collision2D other)
     {
         //* if the other is not the player skip.
@@ -16,6 +17,9 @@ public class DamageOnHit : MonoBehaviour
         hitDir.Normalize();
         //* Multiply the direction with force.
         hitDir *= force;
+        //* Play the hit sound.
+        if (hitSound != null)
+            SoundFXManagerScript.instance.PlaySFXSound(hitSound, transform,0.5f);
         //* Apply a vertical force.
         other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force / 2 * Time.deltaTime, ForceMode2D.Impulse);
         //* Apply an apposing force in the opposite direction.

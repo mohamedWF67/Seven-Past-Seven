@@ -197,6 +197,7 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
 --- !u!50 &3528338222547926792
 Rigidbody2D:
   serializedVersion: 5
@@ -252,3 +253,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 100
   damage: 10
+  hitSound: {fileID: 8300000, guid: 65d429389c129cd4782e64ec9f3e3322, type: 3}
