@@ -81,9 +81,6 @@ public class HealthSystem : MonoBehaviour
     private Material originalMaterial;
     private Coroutine damageCoroutine;
     private Coroutine shieldCoroutine;
-    //! JUST A TESTING BED 
-    private InputAction shieldAction;
-    private PlayerInput PlayerInput;
     
     private void Awake()
     {
@@ -95,18 +92,11 @@ public class HealthSystem : MonoBehaviour
         originalMaterial = spriteRenderer.material;
         flashMaterial = new Material(flashMaterial);
         
-        PlayerInput = FindAnyObjectByType<PlayerInput>();
-        shieldAction = PlayerInput.actions.FindAction("Test");
     }
 
     private void Update()
     {
         HealthRegen();
-        
-        if (shieldAction.WasPressedThisFrame() && isPlayer)
-        {
-            StartShieldCoroutine();
-        }
     }
 
     public void StartShieldCoroutine()

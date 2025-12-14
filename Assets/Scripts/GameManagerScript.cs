@@ -46,11 +46,12 @@ public class GameManagerScript : MonoBehaviour
     
     #region ITEMS
     
-    [SerializeField]private int artifactCount;
-    [SerializeField]private int coinCount;
+    public int keyCount;
+    public int artifactCount;
+    public int coinCount;
     
     #endregion
-
+    
     #region CONTROLS
 
     private string currentControlScheme;
@@ -152,6 +153,12 @@ public class GameManagerScript : MonoBehaviour
 
     #region ITEMS FUNCTIONS
 
+    public void AddKey()
+    {
+        //* Increments the number of keys in inventory.
+        keyCount++;
+    }
+    
     public void AddArtifact()
     {
         //* Makes sure that the amount of artifacts cannot pass the act index.

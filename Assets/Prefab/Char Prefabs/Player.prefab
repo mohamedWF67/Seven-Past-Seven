@@ -225,10 +225,6 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: a237b676c9e6e7d4c8088ff408baecec, type: 3}
   dashClip: {fileID: 8300000, guid: 6bb7a7d2b950c9544b78ccdb8b8c4d55, type: 3}
   playerAnimator: {fileID: 0}
-  currentControlScheme: 
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &5432096742261286163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5469,7 +5465,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5ffdc42b65a34c46bf7b926ad7dcd28, type: 2}
   - {fileID: 11400000, guid: 718c655242d56dc4299dbc15a9bfed02, type: 2}
   - {fileID: 11400000, guid: c5ffdc42b65a34c46bf7b926ad7dcd28, type: 2}
-  - {fileID: 11400000, guid: 4419492f0f6c2904792df64904da1194, type: 2}
+  - {fileID: 11400000, guid: c2bb8c232e7690a409ffba475329b91e, type: 2}
   - {fileID: 11400000, guid: 0d84c958601e9de4dae41b413dcddd2b, type: 2}
   currentShooter: 0
   abilityCooldown: 1

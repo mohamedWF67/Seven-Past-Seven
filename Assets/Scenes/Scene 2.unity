@@ -579,11 +579,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
---- !u!1 &406995942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7754715981918835285, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-  m_PrefabInstance: {fileID: 406995941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &541691908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1333,6 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9f581c3d6711c4b8d375de28dd4e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAGhost: 0
 --- !u!4 &800340160
 Transform:
   m_ObjectHideFlags: 0
@@ -65943,11 +65939,11 @@ PrefabInstance:
     - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
       propertyPath: dialogueBox
       value: 
-      objectReference: {fileID: 406995942}
+      objectReference: {fileID: 3940209587876233440, guid: 5b673adc1f2892048860aee878569929, type: 3}
     - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 2108787713}
+      objectReference: {fileID: 0}
     - target: {fileID: 1886751661729878620, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 122.37
@@ -66229,17 +66225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceHeight: 5
---- !u!114 &2108787713 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8505905928520384491, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-  m_PrefabInstance: {fileID: 406995941}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2124552641
 GameObject:
   m_ObjectHideFlags: 0

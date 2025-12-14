@@ -21,7 +21,8 @@ public class ItemGrabber : MonoBehaviour
         
         Debug.Log($"Item Collected : {itemToGrab.GetItemType()}");
         //* Play the pickup sound.
-        SoundFXManagerScript.instance.PlaySFXSound(itemToGrab.pickupSound, transform);
+        if (itemToGrab.pickupSound != null)
+            SoundFXManagerScript.instance.PlaySFXSound(itemToGrab.pickupSound, transform);
         //* Switches based on the item's type.
         switch (itemToGrab.GetItemType())
         {
