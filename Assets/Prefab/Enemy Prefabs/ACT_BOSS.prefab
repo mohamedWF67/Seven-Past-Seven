@@ -199,6 +199,7 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
 --- !u!50 &3844574664968507680
 Rigidbody2D:
   serializedVersion: 5
@@ -252,6 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4652c5d3baa97d44d8ff7567030d6dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  fireRate: 0
+  bulletSpeed: 0
+  damage: 0
+  range: 0
 --- !u!114 &4415163133021605601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 100
   damage: 50
+  hitSound: {fileID: 8300000, guid: 65d429389c129cd4782e64ec9f3e3322, type: 3}
 --- !u!114 &2004187246242622698
 MonoBehaviour:
   m_ObjectHideFlags: 0

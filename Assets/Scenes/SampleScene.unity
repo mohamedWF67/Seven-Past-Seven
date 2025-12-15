@@ -472,6 +472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1077329331}
     m_Modifications:
+    - target: {fileID: 2651977787688592043, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
+      propertyPath: keyIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.3
@@ -5730,6 +5734,8 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  enemyhitSound: {fileID: 0}
 --- !u!50 &374875272
 Rigidbody2D:
   serializedVersion: 5
@@ -15466,6 +15472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1077329331}
     m_Modifications:
+    - target: {fileID: 2651977787688592043, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
+      propertyPath: keyIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.3
@@ -16478,6 +16488,8 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  enemyhitSound: {fileID: 0}
 --- !u!50 &1183103251
 Rigidbody2D:
   serializedVersion: 5
@@ -21861,6 +21873,8 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  enemyhitSound: {fileID: 0}
 --- !u!50 &1409543637
 Rigidbody2D:
   serializedVersion: 5
@@ -22401,6 +22415,8 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  enemyhitSound: {fileID: 0}
 --- !u!50 &1517118962
 Rigidbody2D:
   serializedVersion: 5
@@ -23102,11 +23118,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: -6.7999997
       objectReference: {fileID: 0}
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27770,6 +27786,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1077329331}
     m_Modifications:
+    - target: {fileID: 2651977787688592043, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
+      propertyPath: keyIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5240281933356886899, guid: bd4dd8d37d4358146b51f98b02c3502e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.3

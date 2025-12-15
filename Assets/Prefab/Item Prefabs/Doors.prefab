@@ -152,6 +152,9 @@ MonoBehaviour:
   doorIndex: 1
   isUnlocked: 0
   isCoroutineRunning: 0
+  doorUnlockClip: {fileID: 8300000, guid: e4c7cfd78f515c243bc5695876cb98ec, type: 3}
+  doorOpenClip: {fileID: 8300000, guid: c3173b5fb25bb8c4c9b142124a617484, type: 3}
+  doorCloseClip: {fileID: 8300000, guid: db119ca209573af41a1bdd37f5bb8561, type: 3}
 --- !u!1 &8609504435149458648
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,3 +340,6 @@ MonoBehaviour:
   doorIndex: 1
   isUnlocked: 0
   isCoroutineRunning: 0
+  doorUnlockClip: {fileID: 8300000, guid: e4c7cfd78f515c243bc5695876cb98ec, type: 3}
+  doorOpenClip: {fileID: 8300000, guid: c3173b5fb25bb8c4c9b142124a617484, type: 3}
+  doorCloseClip: {fileID: 8300000, guid: db119ca209573af41a1bdd37f5bb8561, type: 3}
