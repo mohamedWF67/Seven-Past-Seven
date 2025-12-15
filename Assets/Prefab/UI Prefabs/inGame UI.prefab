@@ -4871,11 +4871,11 @@ RectTransform:
   - {fileID: 3425346640293078148}
   - {fileID: 7814380626716325161}
   - {fileID: 3354780394156709123}
-  - {fileID: 5396097975424146786}
-  - {fileID: 119558898435942483}
   - {fileID: 8078138381093133794}
   - {fileID: 8615946109628015798}
   - {fileID: 5893859326381043982}
+  - {fileID: 5396097975424146786}
+  - {fileID: 119558898435942483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
