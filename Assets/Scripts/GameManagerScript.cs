@@ -75,7 +75,14 @@ public class GameManagerScript : MonoBehaviour
         pauseAction = PlayerInput.GetPlayerByIndex(0).actions.FindAction("Exit");
 
         //* Gets the number out of the scene name.
-        currentSceneIndex = int.Parse(new string(SceneManager.GetActiveScene().name.Where(char.IsDigit).ToArray())) - 1;
+        try
+        {
+            currentSceneIndex = int.Parse(new string(SceneManager.GetActiveScene().name.Where(char.IsDigit).ToArray())) - 1;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
         
         //* Sets the current control scheme to the player control scheme.
         currentControlScheme = PlayerInput.GetPlayerByIndex(0).currentControlScheme;

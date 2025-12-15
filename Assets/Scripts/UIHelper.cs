@@ -28,6 +28,9 @@ public class UIHelper : MonoBehaviour
     private float abilityCooldown;
     private float passiveCooldown;
     
+    [Header("Score")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+    
     bool allReferencesSet => ss != null && pms != null;
     
     private void Awake()
@@ -45,6 +48,7 @@ public class UIHelper : MonoBehaviour
         UpdateItems();
         UpdateDashPanel();
         UpdateAbilityPanel();
+        UpdateScore();
     }
     
     private void UpdateItems()
@@ -85,5 +89,10 @@ public class UIHelper : MonoBehaviour
             abilityIcon.color = new Color(abilityIcon.color.r,abilityIcon.color.g,abilityIcon.color.b,1f);
         if (passiveCooldown >= 1f)
             passiveIcon.color = new Color(passiveIcon.color.r,passiveIcon.color.g,passiveIcon.color.b,1f);
+    }
+    
+    private void UpdateScore()
+    {
+        scoreText.text = "Score: " + GameManagerScript.instance.score.ToString("00000");
     }
 }
