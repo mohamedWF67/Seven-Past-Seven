@@ -42,7 +42,7 @@ public class PortalLogic : MonoBehaviour
             isUnlocked = true;
             destinationPortal.gameObject.GetComponent<PortalLogic>().isUnlocked = true;
             Debug.Log("Door Unlocked");
-            NotificationTextScript.instance.ShowNotification("Door Unlocked" + "\n" + "Press W or R3 to Teleport");
+            NotificationTextScript.instance.ShowNotification("Door Unlocked");
         }
         
         //* Prevents the player from teleporting infinitely.
