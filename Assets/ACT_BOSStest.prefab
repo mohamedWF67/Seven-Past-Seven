@@ -181,8 +181,8 @@ MonoBehaviour:
   showHealthBar: 0
   enemyHealthBar: {fileID: 7210905573847035838, guid: b4dba04402c660d4eb44045ca3b5d7e9, type: 3}
   SpawnedHealthBar: {fileID: 0}
-  maxHealth: 100
-  maxHearts: 2
+  maxHealth: 300
+  maxHearts: 3
   currentHealth: 0
   currentHearts: 0
   isDead: 0
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDrop: {fileID: 2245080178198098873, guid: bddd54bda85277a49812568e8c744815, type: 3}
+  keyIndex: 0
 --- !u!114 &5576980696979380129
 MonoBehaviour:
   m_ObjectHideFlags: 0
