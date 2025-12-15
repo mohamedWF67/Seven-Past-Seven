@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -39,6 +40,9 @@ public class ShootingScript : MonoBehaviour
     
     public float abilityCooldown = 1f;
     public float passiveCooldown = 1f;
+
+    AudioSource audioSource;
+    private bool soundPlaying;
     
     private void Awake()
     {
@@ -47,6 +51,13 @@ public class ShootingScript : MonoBehaviour
         ia = pi.actions.FindAction("Attack");
         lookAction = pi.actions.FindAction("Look");
         switchAbility = pi.actions.FindAction("SwitchAbility");
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnValidate()
+    {
+        audioSource = GetComponent<AudioSource>();
+        UpdateSounds();
     }
 
     private void Update()
@@ -89,6 +100,11 @@ public class ShootingScript : MonoBehaviour
         {
             firingCoroutine = StartCoroutine(Fire());
         }
+        
+        if (soundPlaying && !ia.IsPressed())
+        {
+            StopSound();
+        }
     }
 
     IEnumerator PerformAbility()
@@ -98,6 +114,7 @@ public class ShootingScript : MonoBehaviour
 
         Vector3 dir = transform.right;
         
+        bullet.AddComponent<AudioSource>().playOnAwake = false;
         var ability = bullet.AddComponent<AbilityScript>();
         ability.abilityType = ULTs[currentShooterIndex];
 
@@ -137,9 +154,20 @@ public class ShootingScript : MonoBehaviour
     IEnumerator Fire()
     {
         isFiring = true;
-        GameObject bullet = Instantiate(shotTypes[currentShooterIndex].bullet, transform.position , Quaternion.identity);
 
+        if (!soundPlaying && shotTypes[currentShooterIndex].isLoopingAudio)
+        {
+            PlaySound();
+        }
+        
+        GameObject bullet = Instantiate(shotTypes[currentShooterIndex].bullet, transform.position , Quaternion.identity);
+        
         Vector3 dir = transform.right;
+        
+        AudioSource au = bullet.AddComponent<AudioSource>();
+        au.playOnAwake = true;
+        au.clip = shotTypes[currentShooterIndex].sound;
+        au.Play();
         
         var behaviour = bullet.AddComponent<ProjectileBehaviour>();
         behaviour.damage = shotTypes[currentShooterIndex].damage;
@@ -169,6 +197,31 @@ public class ShootingScript : MonoBehaviour
         
         isFiring = false;
         firingCoroutine = null;
+    }
+
+    void PlaySound()
+    {
+        audioSource.Play();
+        soundPlaying = true;
+    }
+    
+    void StopSound()
+    {
+        audioSource.Stop();
+        soundPlaying = false;
+    }
+
+    public void UpdateSounds()
+    {
+        if(audioSource == null) return;
+        audioSource.clip = shotTypes[currentShooterIndex].sound;
+        audioSource.loop = shotTypes[currentShooterIndex].isLoopingAudio;
+    }
+
+    public void ChangeShooter(Shooter shooter)
+    {
+        currentShooter = shooter;
+        UpdateSounds();
     }
 
     public int GetDamage()

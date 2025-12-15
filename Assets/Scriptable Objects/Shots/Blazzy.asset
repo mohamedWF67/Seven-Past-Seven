@@ -16,8 +16,9 @@ MonoBehaviour:
   fireRate: 0.5
   speed: 10
   destroyTime: 1
-  canPathThroughAnything: 0
+  canPathThroughWalls: 0
+  canPathThroughEnemies: 0
   bullet: {fileID: 1517603443566993518, guid: 9ecba910e564ba840807d664d0f303e3, type: 3}
   icon: {fileID: -2365764504964540382, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
   isLoopingAudio: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: c9ea0c9ec2a161a42a15e7db6988c4da, type: 3}

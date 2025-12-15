@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 73ce7188e4901d142b8c667f90cf4a4b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dialogueBox: {fileID: 3940209587876233440, guid: 5b673adc1f2892048860aee878569929, type: 3}
+  - dsBox: {instanceID: 0}
+  - dialogueSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

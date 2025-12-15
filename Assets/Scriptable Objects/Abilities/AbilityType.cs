@@ -23,6 +23,8 @@ public class AbilityType : ScriptableObject
     public float delayffect = 0f;
     
     public AudioClip sound;
+    public bool isLoopingAudio;
+    
     public Sprite icon;
     
     public GameObject Effect;

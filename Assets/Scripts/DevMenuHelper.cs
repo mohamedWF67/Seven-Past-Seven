@@ -72,7 +72,7 @@ void CheckReferences()
     {
         int abilityIndex = ((int)ss.currentShooter + 1) % ss.shotTypes.Count;
         Debug.Log($"Ability index: {(ShootingScript.Shooter)abilityIndex}");
-        ss.currentShooter = (ShootingScript.Shooter)abilityIndex;
+        ss.ChangeShooter((ShootingScript.Shooter)abilityIndex);
     }
 
     public void TeleportPlayerToExit()

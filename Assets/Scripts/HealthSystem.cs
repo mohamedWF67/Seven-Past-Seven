@@ -85,6 +85,7 @@ public class HealthSystem : MonoBehaviour
     
     [Header("Sounds")]
     [SerializeField] List<AudioClip> playerHitSounds;
+    [SerializeField] AudioClip playerDeathSound;
     [SerializeField] private AudioClip enemyhitSound;
     
     private void Awake()
@@ -256,8 +257,10 @@ public class HealthSystem : MonoBehaviour
         isDead = true;
         Debug.Log("Die");
         if (isPlayer)
+        {
+            SoundFXManagerScript.instance.PlaySFXSound(playerDeathSound, transform);
             StartCoroutine(RespawnPlayer());
-        else
+        }else
             Destroy(gameObject);
     }
 

@@ -16,6 +16,7 @@ public class AbilityScript : MonoBehaviour
     private Collider2D coll;
     private SpriteRenderer sr;
     private Light2D _light;
+    private AudioSource audioSource;
     
     [SerializeField] private Light2D babyLight;
     [SerializeField] private ParticleSystem babyps;
@@ -31,6 +32,7 @@ public class AbilityScript : MonoBehaviour
         coll = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         _light = GetComponent<Light2D>();
+        audioSource = GetComponent<AudioSource>();
         
         if (transform.childCount > 0)
         {
@@ -61,6 +63,17 @@ public class AbilityScript : MonoBehaviour
     {
         //* Waits for 0.05 seconds to prevent the ability from running before getting all the references.
         yield return new WaitForSeconds(0.05f);
+        
+        if (audioSource != null)
+        {
+            Debug.Log(abilityType.sound);
+            audioSource.clip = abilityType.sound;
+            audioSource.loop = abilityType.isLoopingAudio;
+            if(audioSource != null && abilityType.isStaticAbility)
+                audioSource.Play();
+            Debug.Log(audioSource.clip);
+        }
+        
         //* Waits for the ability's delay time.
         if (!isInstant)
             yield return new WaitForSeconds(abilityType.delayTime);
@@ -103,10 +116,17 @@ public class AbilityScript : MonoBehaviour
         //* If enabled waits for the delay effect time that prevents the enemy from getting damaged before the particles reach it.
         if (abilityType.delayffect > 0)
             yield return new WaitForSeconds(abilityType.delayffect);
-        if (!abilityType.isStaticAbility)               //* ///////////////////////////////////////////////////////////////*//
-            GetEnemiesInRange();                        //*     if the ability is static then it deals damage over time.   *//
-        else                                            //*     else then it deals damage instantly.                       *//
-            StartCoroutine(DamageOverTime());     //* ///////////////////////////////////////////////////////////////*//
+        //* if the ability is static then it deals damage over time.
+        if (abilityType.isStaticAbility)
+        {
+            StartCoroutine(DamageOverTime()); 
+        }else
+        {
+            //*else then it deals damage instantly.
+            GetEnemiesInRange();
+        } 
+
+            
         //* Waits for the ability duration.
         yield return new WaitForSeconds(abilityType.duration);
         //* Destroys the ability's game object.

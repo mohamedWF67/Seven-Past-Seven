@@ -10,7 +10,10 @@ public class ACT_Setter : MonoBehaviour
     public static ACT_Setter instance;
     public List<ACT_Data> actData;
     public int currentActIndex = -1;
-
+    
+    [Header("Sounds")]
+    [SerializeField] AudioClip abilityGainedSound;
+    
     GameObject player;
     ShootingScript ss;
     PlayerMovementScript pms;
@@ -47,7 +50,7 @@ public class ACT_Setter : MonoBehaviour
 
     public void SetActData()
     {
-        ss.currentShooter = actData[currentActIndex].CurrentAbilityStack;
+        ss.ChangeShooter(actData[currentActIndex].CurrentAbilityStack);
         ss.canFire = actData[currentActIndex].canFire;
         pms.canDash = actData[currentActIndex].canDash;
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;
@@ -56,6 +59,8 @@ public class ACT_Setter : MonoBehaviour
 
         if (currentActIndex == 0) return;
         NotificationTextScript.instance.ShowNotification($"You have acquired {actData[currentActIndex].CurrentAbilityStack}'s abilities.");
+        if(abilityGainedSound != null)
+            SoundFXManagerScript.instance.PlaySFXSound(abilityGainedSound, transform);
     }
 
     public void NextAct()

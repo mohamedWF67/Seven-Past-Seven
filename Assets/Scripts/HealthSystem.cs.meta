@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 9989f372bd0960b449626e1f2a052416
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyHealthBar: {fileID: 7210905573847035838, guid: b4dba04402c660d4eb44045ca3b5d7e9, type: 3}
+  - SpawnedHealthBar: {instanceID: 0}
+  - flashMaterial: {fileID: -876546973899608171, guid: 4544ba7246cc19349a77455fb6c94e00, type: 3}
+  - floatingText: {fileID: 1928630967424062572, guid: c343ddc32f41124429a8b1629241f819, type: 3}
+  - playerDeathSound: {fileID: 8300000, guid: f5734f85ccf9ccf46b51802161456bb1, type: 3}
+  - enemyhitSound: {fileID: 8300000, guid: 3598024026f7a9844a69e1ed1d641c12, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

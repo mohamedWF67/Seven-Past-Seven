@@ -201,6 +201,8 @@ MonoBehaviour:
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
   playerHitSounds: []
+  playerDeathSound: {fileID: 0}
+  enemyhitSound: {fileID: 8300000, guid: 3598024026f7a9844a69e1ed1d641c12, type: 3}
 --- !u!50 &6773310709968554961
 Rigidbody2D:
   serializedVersion: 5

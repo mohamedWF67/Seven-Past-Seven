@@ -14,6 +14,8 @@ public class EnemyShootingScript : MonoBehaviour
 
     private LayerMask playerLayer;
     private Coroutine shootingCoroutine;
+    
+    bool isPlayerInRange;
 
     private void Start()
     {
@@ -23,13 +25,13 @@ public class EnemyShootingScript : MonoBehaviour
 
     private void Update()
     {
-        bool isPlayerInRange = Physics2D.OverlapCircle(bulletSpawn.position, range, playerLayer);
+        isPlayerInRange = Physics2D.OverlapCircle(bulletSpawn.position, range, playerLayer);
         if (isPlayerInRange && shootingCoroutine == null)
         {
             shootingCoroutine = StartCoroutine(Shoot());
         }else if (!isPlayerInRange && shootingCoroutine != null)
         {
-            StopCoroutine(Shoot());
+            StopCoroutine(shootingCoroutine);
             shootingCoroutine = null;
         }
     }
@@ -46,5 +48,11 @@ public class EnemyShootingScript : MonoBehaviour
             bullet.GetComponent<EnemyBulletScript>().damage = damage;
             yield return new WaitForSeconds(fireRate);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(bulletSpawn.position, range);
     }
 }

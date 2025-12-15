@@ -5735,6 +5735,7 @@ MonoBehaviour:
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
   playerHitSounds: []
+  playerDeathSound: {fileID: 0}
   enemyhitSound: {fileID: 0}
 --- !u!50 &374875272
 Rigidbody2D:
@@ -11673,7 +11674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &573169480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15542,6 +15543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ACT_BOSStest
       objectReference: {fileID: 0}
+    - target: {fileID: 2401511518269071532, guid: 77e81dfbf08a89b4ca1c057470d1ffa9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4970220213645721426, guid: 77e81dfbf08a89b4ca1c057470d1ffa9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16489,6 +16494,7 @@ MonoBehaviour:
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
   playerHitSounds: []
+  playerDeathSound: {fileID: 0}
   enemyhitSound: {fileID: 0}
 --- !u!50 &1183103251
 Rigidbody2D:
@@ -21874,6 +21880,7 @@ MonoBehaviour:
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
   playerHitSounds: []
+  playerDeathSound: {fileID: 0}
   enemyhitSound: {fileID: 0}
 --- !u!50 &1409543637
 Rigidbody2D:
@@ -22416,6 +22423,7 @@ MonoBehaviour:
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
   playerHitSounds: []
+  playerDeathSound: {fileID: 0}
   enemyhitSound: {fileID: 0}
 --- !u!50 &1517118962
 Rigidbody2D:
@@ -27491,6 +27499,18 @@ PrefabInstance:
     - target: {fileID: 165081490824343926, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: c9ea0c9ec2a161a42a15e7db6988c4da, type: 3}
+    - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: currentShooter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x

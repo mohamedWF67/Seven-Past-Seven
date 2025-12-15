@@ -5047,6 +5047,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41d9b4ceb2cf45e4f8d3d7087b454a40, type: 2}
   - {fileID: 11400000, guid: fd8870dfac99d8c4f9fe73524ca0b221, type: 2}
   currentActIndex: -1
+  abilityGainedSound: {fileID: 8300000, guid: 788a1bcde8bc4244b928130c5e30053a, type: 3}
 --- !u!114 &2020275532559864279
 MonoBehaviour:
   m_ObjectHideFlags: 0
