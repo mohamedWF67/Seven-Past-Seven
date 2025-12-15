@@ -27507,10 +27507,14 @@ PrefabInstance:
     - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: c9ea0c9ec2a161a42a15e7db6988c4da, type: 3}
+      objectReference: {fileID: 8300000, guid: 5da43dfc13aae1845a63d9845d781ef7, type: 3}
     - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: currentShooter
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: 'ULTs.Array.data[3]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x

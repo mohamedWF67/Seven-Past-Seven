@@ -21,4 +21,4 @@ MonoBehaviour:
   bullet: {fileID: 6538914341348240533, guid: ad52dd979f2de7c48b751ee66019a90f, type: 3}
   icon: {fileID: 893148557072781507, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
   isLoopingAudio: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 0e7acf416e3e59446adfabba7c0cdbed, type: 3}

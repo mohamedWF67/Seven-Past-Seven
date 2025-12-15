@@ -25,6 +25,8 @@ MonoBehaviour:
   canPathThroughWalls: 0
   Intenisty: 2
   delayffect: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 63b97f9cfad8d074a9e045ae199df9b2, type: 3}
+  babySound: {fileID: 8300000, guid: 3b43f76dc3031524c845d1d3d619eef7, type: 3}
+  isLoopingAudio: 0
   icon: {fileID: 2170279749749914347, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
   Effect: {fileID: 2907014264342171849, guid: a447fe60c59d6c04d869f386cde5dccc, type: 3}

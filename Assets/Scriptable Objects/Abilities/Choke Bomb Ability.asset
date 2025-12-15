@@ -19,11 +19,14 @@ MonoBehaviour:
   duration: 3
   delayTime: 1
   isStaticAbility: 0
+  tickRate: 0.5
   isSticky: 0
   canDamagePlayer: 0
   canPathThroughWalls: 0
   Intenisty: 1
   delayffect: 0.5
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5da43dfc13aae1845a63d9845d781ef7, type: 3}
+  babySound: {fileID: 8300000, guid: 8eb556e8923c8234183ec28e79d7ae10, type: 3}
+  isLoopingAudio: 0
   icon: {fileID: 6917873113871070293, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
   Effect: {fileID: 3538068243792797921, guid: c7b28b07cc2b8a84a8c1ac42a396a4e0, type: 3}

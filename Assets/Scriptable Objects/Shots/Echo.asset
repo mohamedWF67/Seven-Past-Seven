@@ -20,5 +20,5 @@ MonoBehaviour:
   canPathThroughEnemies: 1
   bullet: {fileID: 1377688848787466482, guid: 424938c57cc20f64ab1e41c9309fa07a, type: 3}
   icon: {fileID: -91192187916832028, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
-  isLoopingAudio: 1
+  isLoopingAudio: 0
   sound: {fileID: 8300000, guid: f5734f85ccf9ccf46b51802161456bb1, type: 3}
