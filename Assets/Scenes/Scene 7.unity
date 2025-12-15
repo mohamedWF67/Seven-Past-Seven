@@ -422,9 +422,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6646554601085869019, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
-      propertyPath: dashCooldown
-      value: 0.5
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a7b8fc51a39d7ec4c9d4126619770826, type: 3}
+    - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: currentShooter
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1159,10 +1163,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3266461529010240357, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
-      propertyPath: backgroundMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 9ea49ed79010bf74bb2ee83fb98e1fb8, type: 3}
     - target: {fileID: 4741374748392557958, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -1207,10 +1207,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7844896194190806582, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 9ea49ed79010bf74bb2ee83fb98e1fb8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1621,6 +1617,9 @@ GameObject:
   - component: {fileID: 699905431}
   - component: {fileID: 699905433}
   - component: {fileID: 699905432}
+  - component: {fileID: 699905436}
+  - component: {fileID: 699905435}
+  - component: {fileID: 699905434}
   m_Layer: 12
   m_Name: Hazard
   m_TagString: Hazards
@@ -1857,6 +1856,130 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &699905434
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699905430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 699905436}
+    m_ColliderPaths:
+    - - X: 790000000
+        Y: 228124992
+      - X: 690000000
+        Y: 228124992
+      - X: 690000000
+        Y: 220000000
+      - X: 790000000
+        Y: 220000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 78.99997, y: 22}
+      - {x: 78.99997, y: 22.8125}
+      - {x: 69, y: 22.812471}
+      - {x: 69.00003, y: 22}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 699905430}
+--- !u!50 &699905435
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699905430}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &699905436
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699905430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &713762772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,18 +2975,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: currentActIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: actData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: 'actData.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c0d43916b4e960846adc365c90d9b827, type: 2}
     - target: {fileID: 2682918606046047797, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -129324,8 +129435,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1919735417}
   - component: {fileID: 1919735416}
-  - component: {fileID: 1919735415}
   - component: {fileID: 1919735414}
+  - component: {fileID: 1919735418}
   m_Layer: 0
   m_Name: Door Exit
   m_TagString: Exit
@@ -129379,18 +129490,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.235, y: 1.965}
   m_EdgeRadius: 0
---- !u!114 &1919735415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919735413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219c4d6ef9b628445a0f6dab64903b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1919735416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -129461,6 +129560,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919735418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919735413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219c4d6ef9b628445a0f6dab64903b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1942847682
 PrefabInstance:
   m_ObjectHideFlags: 0

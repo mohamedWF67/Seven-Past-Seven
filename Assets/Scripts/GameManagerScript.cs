@@ -31,7 +31,7 @@ public class GameManagerScript : MonoBehaviour
     [Header("Score")]
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] private float initialScore;
-    public float score;
+    [SerializeField] float score;
     [SerializeField] private float scaleFactor = 0.5f;
     [SerializeField] private float timeFactor = 60f;
     [SerializeField] private float currentTime;
@@ -41,7 +41,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private float extraScaleFactor = 0.5f;
     [SerializeField] private float extraTimeFactor = 120f;
     [Space(5)]
-    [SerializeField] private float totalScore;
+    public float totalScore;
     #endregion
     
     #region ITEMS

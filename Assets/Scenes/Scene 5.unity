@@ -2954,13 +2954,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 5da43dfc13aae1845a63d9845d781ef7, type: 3}
     - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: currentShooter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6646554601085869019, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
-      propertyPath: dashCooldown
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3634,6 +3638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDrop: {fileID: 2245080178198098873, guid: bddd54bda85277a49812568e8c744815, type: 3}
+  keyIndex: 0
 --- !u!114 &766253759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3875,18 +3880,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: currentActIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: actData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: 'actData.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c0d43916b4e960846adc365c90d9b827, type: 2}
     - target: {fileID: 2682918606046047797, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3970,38 +3963,6 @@ PrefabInstance:
     - target: {fileID: 3255054370652370644, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
       propertyPath: m_Name
       value: inGame UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901641412337447181, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901641412337447181, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901641412337447181, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901641412337447181, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264407998425448624, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264407998425448624, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264407998425448624, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264407998425448624, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -125886,10 +125847,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3266461529010240357, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
-      propertyPath: backgroundMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 36c151cfb872a9b4dbd078308c1f4552, type: 3}
     - target: {fileID: 4741374748392557958, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -125934,14 +125891,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7844896194190806582, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 36c151cfb872a9b4dbd078308c1f4552, type: 3}
-    - target: {fileID: 7844896194190806582, guid: f0fd2bbed4234a842a9b44d7536722ae, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -1705924649646416733, guid: 2f95aa0109b003b47a62d391d418dad1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

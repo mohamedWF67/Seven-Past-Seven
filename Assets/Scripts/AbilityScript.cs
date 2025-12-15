@@ -83,7 +83,7 @@ public class AbilityScript : MonoBehaviour
         if (sr != null) sr.enabled = false;
         //* Play Baby Sound
         if (abilityType.babySound != null)
-            SoundFXManagerScript.instance.PlaySFXSound(abilityType.babySound, transform);
+            SoundFXManagerScript.instance.Play3DSFXSound(abilityType.babySound, transform);
         //* Stops the projectile's movement.
         rb.linearVelocity = Vector2.zero;
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;

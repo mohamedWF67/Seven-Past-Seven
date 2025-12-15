@@ -5484,10 +5484,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05a02580cc046f34f975ea6c6cab82b2, type: 2}
   - {fileID: 11400000, guid: c5ffdc42b65a34c46bf7b926ad7dcd28, type: 2}
   - {fileID: 11400000, guid: 718c655242d56dc4299dbc15a9bfed02, type: 2}
-  - {fileID: 11400000, guid: c5ffdc42b65a34c46bf7b926ad7dcd28, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: c2bb8c232e7690a409ffba475329b91e, type: 2}
   - {fileID: 11400000, guid: 0d84c958601e9de4dae41b413dcddd2b, type: 2}
-  currentShooter: 5
+  currentShooter: 4
   abilityCooldown: 1
   passiveCooldown: 1
 --- !u!82 &3180857073906576414
@@ -5501,11 +5501,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3081477358219459916, guid: 2f95aa0109b003b47a62d391d418dad1, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a7b8fc51a39d7ec4c9d4126619770826, type: 3}
+  m_Resource: {fileID: 8300000, guid: a8f011e7b3f3cc04d95e59791410ba18, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

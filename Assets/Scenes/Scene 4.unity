@@ -1539,9 +1539,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180857073906576414, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f5734f85ccf9ccf46b51802161456bb1, type: 3}
     - target: {fileID: 3207853755443629229, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: currentShooter
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976544321639354915, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
+      propertyPath: maxHearts
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1805,6 +1817,9 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  playerDeathSound: {fileID: 0}
+  enemyhitSound: {fileID: 0}
 --- !u!114 &663186635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,6 +1834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 12
   damage: 10
+  hitSound: {fileID: 0}
 --- !u!50 &663186637
 Rigidbody2D:
   serializedVersion: 5
@@ -136090,6 +136106,9 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  playerDeathSound: {fileID: 0}
+  enemyhitSound: {fileID: 0}
 --- !u!114 &1172265834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136104,6 +136123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 12
   damage: 10
+  hitSound: {fileID: 0}
 --- !u!82 &1172265836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -136352,6 +136372,9 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  playerDeathSound: {fileID: 0}
+  enemyhitSound: {fileID: 0}
 --- !u!114 &1196268346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136366,6 +136389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 12
   damage: 19
+  hitSound: {fileID: 0}
 --- !u!50 &1196268348
 Rigidbody2D:
   serializedVersion: 5
@@ -137113,6 +137137,9 @@ MonoBehaviour:
   enableHealUI: 1
   updateHealthUI: 0
   healthUIColor: {r: 1, g: 1, b: 1, a: 1}
+  playerHitSounds: []
+  playerDeathSound: {fileID: 0}
+  enemyhitSound: {fileID: 0}
 --- !u!114 &1469734251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137127,6 +137154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 12
   damage: 10
+  hitSound: {fileID: 0}
 --- !u!50 &1469734253
 Rigidbody2D:
   serializedVersion: 5
@@ -141045,7 +141073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387038367456492027, guid: 9fa41989887e8ed47b35a25c6310866d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3959654092553359067, guid: 9fa41989887e8ed47b35a25c6310866d, type: 3}
       propertyPath: m_LocalPosition.x

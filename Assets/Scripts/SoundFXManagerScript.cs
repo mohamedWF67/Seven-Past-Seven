@@ -57,6 +57,7 @@ public class SoundFXManagerScript : MonoBehaviour
         ManageBackgroundMusic();
     }
 
+    #region PUBLIC SOUND METHODS
     public void PlaySFXSound(AudioClip clip, Transform transform, float volume = 1f)
     {
         PlaySound(soundSFXObject, clip, volume,transform);
@@ -66,6 +67,25 @@ public class SoundFXManagerScript : MonoBehaviour
     {
         PlaySound(soundUIObject, clip, volume,transform);
     }
+
+    public void Play3DSFXSound(AudioClip clip, Transform transform,float Distance = 10, float volume = 1f)
+    {
+        //* Creates a sound object and assigns it as an audio source.
+        AudioSource audioSource = Instantiate(soundSFXObject, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        //* Sets the audio source's 3D properties.
+        audioSource.spatialBlend = 1;
+        audioSource.maxDistance = Distance;
+        //* Sets the instantiated audio source to the clip from the parameter.
+        audioSource.clip = clip;
+        //* Sets the instantiated audio source's volume from the parameter.
+        audioSource.volume = volume;
+        //* Plays the instantiated audio source with the inserted audio clip.
+        audioSource.Play();
+        //* Gets the audio clip length and destroys the object after it finishes playing.
+        float audioLength = audioSource.clip.length;
+        Destroy(audioSource.gameObject, audioLength);
+    }
+    #endregion
 
     void PlaySound(GameObject audioObject, AudioClip clip, float volume,Transform transform)
     {
@@ -85,6 +105,13 @@ public class SoundFXManagerScript : MonoBehaviour
     public void ManageBackgroundMusic()
     {
         int currentScene = GameManagerScript.instance.currentSceneIndex;
+        
+        if (audioScenes[currentScene].audioClip == null)
+        {
+            backgroundMusicSource.Stop();
+            return;
+        }
+        
         if (audioScenes[currentScene].audioClip.Equals(backgroundMusic))
         {
             Debug.Log("Same audio clip");

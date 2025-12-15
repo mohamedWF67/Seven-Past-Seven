@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsScript : MonoBehaviour
@@ -64,6 +65,13 @@ public class SettingsScript : MonoBehaviour
         am.SetFloat("UIMixerVolume", volume);
         PlayerPrefs.SetFloat("UIVolume", volume);
         UIText.text = (((UISlider.value + 80f) / 80)* 100).ToString("000");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+        Destroy(gameObject);
+        Destroy(SoundFXManagerScript.instance.gameObject);
     }
     
 }

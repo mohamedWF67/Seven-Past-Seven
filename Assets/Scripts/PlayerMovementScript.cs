@@ -356,7 +356,7 @@ public class PlayerMovementScript : MonoBehaviour
             {   //* If walled and !grounded, execute wall jump.
                 StartCoroutine(WallJumpCoroutine(dir));
                 //* Play a sound when jumping.
-                SoundFXManagerScript.instance.PlaySFXSound(jumpClip,transform);
+                SoundFXManagerScript.instance.Play3DSFXSound(jumpClip,transform);
                 
                 return; //* Stops so it doesn't execute a normal jump.
             }
@@ -364,7 +364,7 @@ public class PlayerMovementScript : MonoBehaviour
             isJumping = true;
             targetHeight = rb.position.y + jumpHeight;  //* Calculates target height Y position.
             CreateDustTrail();//* play Dust effect.
-            SoundFXManagerScript.instance.PlaySFXSound(jumpClip,transform);//* Play jump Sound.
+            SoundFXManagerScript.instance.Play3DSFXSound(jumpClip,transform);//* Play jump Sound.
             timeSinceJump = Time.time;                  //* Stamps time since the jump key was pressed.
             timeToApex = TimeToApexFromHeight(jumpHeight, rb); //* Stores time to apex.
         }
@@ -506,8 +506,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     IEnumerator doDash()
     {
-        SoundFXManagerScript.instance.PlaySFXSound(dashClip,transform);
-        
+        //* Play Dash Sound.
+        SoundFXManagerScript.instance.Play3DSFXSound(dashClip,transform);
         dashFinished = false;
         dashing = true;
         

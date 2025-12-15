@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
@@ -63,7 +64,7 @@ public class HealthUI : MonoBehaviour
             UpdateAll();
     }
 
-    private void UpdateAll()
+    public void UpdateAll()
     {
         ChangeHealthLevels(hs.GetHealth());
         ChangeHearts(hs.GetHearts());
@@ -104,5 +105,27 @@ public class HealthUI : MonoBehaviour
             else
                 this.hearts[i].SetActive(false);
         }
+    }
+    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartCoroutine(LateStart());
+    }
+    
+    IEnumerator LateStart()
+    {
+        yield return null;
+        
+        UpdateAll();
     }
 }

@@ -18,7 +18,7 @@ public class KeyHolder : MonoBehaviour
             Debug.Log($"Key Collected : {index}");
             NotificationTextScript.instance.ShowNotification($"Key Collected : {index}");
             GameManagerScript.instance.AddKey();
-            SoundFXManagerScript.instance.PlaySFXSound(keyPickupClip, transform);
+            SoundFXManagerScript.instance.Play3DSFXSound(keyPickupClip, transform);
             if (destroyOnCollect)
             {
                 Destroy(other.gameObject);

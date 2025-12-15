@@ -93,6 +93,6 @@ public class UIHelper : MonoBehaviour
     
     private void UpdateScore()
     {
-        scoreText.text = "Score: " + GameManagerScript.instance.score.ToString("00000");
+        scoreText.text = "Score: " + GameManagerScript.instance.totalScore.ToString("00000");
     }
 }

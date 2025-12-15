@@ -46,8 +46,8 @@ public class PortalLogic : MonoBehaviour
             isUnlocked = true;
             destinationPortal.gameObject.GetComponent<PortalLogic>().isUnlocked = true;
             Debug.Log("Door Unlocked");
-            NotificationTextScript.instance.ShowNotification("Door Unlocked" + "\n" + "Press W or R3 to Teleport");
-            SoundFXManagerScript.instance.PlaySFXSound(doorUnlockClip, transform);
+            NotificationTextScript.instance.ShowNotification("Door Unlocked" + "\n" + "Press W or R3 to open");
+            SoundFXManagerScript.instance.Play3DSFXSound(doorUnlockClip, transform);
         }
         
         //* Prevents the player from teleporting infinitely.
@@ -103,9 +103,9 @@ public class PortalLogic : MonoBehaviour
         FullScreenEffectScript.instance.Blink();
         if (destinationPortal.TryGetComponent(out PortalLogic portal))
             portal.isCoroutineRunning = true;
-        SoundFXManagerScript.instance.PlaySFXSound(doorOpenClip, transform);
+        SoundFXManagerScript.instance.Play3DSFXSound(doorOpenClip, transform);
         yield return new WaitForSeconds(FullScreenEffectScript.instance.blinkTime);
-        SoundFXManagerScript.instance.PlaySFXSound(doorCloseClip, transform);
+        SoundFXManagerScript.instance.Play3DSFXSound(doorCloseClip, transform);
         //* Adds the player to the other portal's set.
         portal.portalObjects.Add(other.gameObject);
         portal.player = player;

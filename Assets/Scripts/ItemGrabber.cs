@@ -20,7 +20,7 @@ public class ItemGrabber : MonoBehaviour
         if (itemToGrab == null) return;
         //* Play the pickup sound.
         if (itemToGrab.pickupSound != null)
-            SoundFXManagerScript.instance.PlaySFXSound(itemToGrab.pickupSound, transform);
+            SoundFXManagerScript.instance.Play3DSFXSound(itemToGrab.pickupSound, transform);
         //* Switches based on the item's type.
         switch (itemToGrab.GetItemType())
         {

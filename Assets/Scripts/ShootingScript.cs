@@ -129,7 +129,7 @@ public class ShootingScript : MonoBehaviour
 
         //Debug.Log("Ability Performed");
 
-        if (currentShooter == Shooter.Echo)
+        if (currentShooter == Shooter.Echo && CameraShake.Instance != null)
         {
             float totalTime = ULTs[currentShooterIndex].duration + ULTs[currentShooterIndex].delayTime + ULTs[currentShooterIndex].delayffect;
             CameraShake.Instance.Shake(5,1,totalTime);
@@ -168,6 +168,8 @@ public class ShootingScript : MonoBehaviour
             AudioSource au = bullet.AddComponent<AudioSource>(); 
             au.playOnAwake = true; 
             au.clip = shotTypes[currentShooterIndex].sound; 
+            au.spatialBlend = 1;
+            au.maxDistance = 10;
             au.Play();
         }
         
@@ -224,8 +226,10 @@ public class ShootingScript : MonoBehaviour
     public void ChangeShooter(Shooter shooter)
     {
         currentShooter = shooter;
-        StopCoroutine(abilityCoroutine);
-        StopCoroutine(firingCoroutine);
+        if(abilityCoroutine != null)
+            StopCoroutine(abilityCoroutine);
+        if(firingCoroutine != null)
+            StopCoroutine(firingCoroutine);
         abilityCoroutine = null;
         firingCoroutine = null;
         UpdateSounds();
