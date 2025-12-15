@@ -73,7 +73,7 @@ public class ShootingScript : MonoBehaviour
     {
         if (!canFire) return;
         
-        if (switchAbility.triggered && abilityCoroutine == null)
+        if (switchAbility.triggered && abilityCoroutine == null && ULTs[currentShooterIndex] != null)
         {
             abilityCoroutine = StartCoroutine(PerformAbility());
         }
@@ -109,7 +109,6 @@ public class ShootingScript : MonoBehaviour
 
     IEnumerator PerformAbility()
     {
-        
         GameObject bullet = Instantiate(ULTs[currentShooterIndex].Effect, transform.position , Quaternion.identity);
 
         Vector3 dir = transform.right;
@@ -163,11 +162,14 @@ public class ShootingScript : MonoBehaviour
         GameObject bullet = Instantiate(shotTypes[currentShooterIndex].bullet, transform.position , Quaternion.identity);
         
         Vector3 dir = transform.right;
-        
-        AudioSource au = bullet.AddComponent<AudioSource>();
-        au.playOnAwake = true;
-        au.clip = shotTypes[currentShooterIndex].sound;
-        au.Play();
+
+        if (!shotTypes[currentShooterIndex].isLoopingAudio)
+        {
+            AudioSource au = bullet.AddComponent<AudioSource>(); 
+            au.playOnAwake = true; 
+            au.clip = shotTypes[currentShooterIndex].sound; 
+            au.Play();
+        }
         
         var behaviour = bullet.AddComponent<ProjectileBehaviour>();
         behaviour.damage = shotTypes[currentShooterIndex].damage;
@@ -180,7 +182,8 @@ public class ShootingScript : MonoBehaviour
         
         if (currentShooter == Shooter.Echo)
         {
-            CameraShake.Instance.Shake(0.5f,1);
+            if (CameraShake.Instance != null)
+                CameraShake.Instance.Shake(0.5f,1);
         }
         
         float cooldown = shotTypes[currentShooterIndex].fireRate;
@@ -221,6 +224,10 @@ public class ShootingScript : MonoBehaviour
     public void ChangeShooter(Shooter shooter)
     {
         currentShooter = shooter;
+        StopCoroutine(abilityCoroutine);
+        StopCoroutine(firingCoroutine);
+        abilityCoroutine = null;
+        firingCoroutine = null;
         UpdateSounds();
     }
 
@@ -240,11 +247,13 @@ public class ShootingScript : MonoBehaviour
 
     public Sprite GetAbilityImage()
     {
+        if (ULTs[currentShooterIndex] == null) return null;
         return ULTs[currentShooterIndex].icon;
     }
 
     public Sprite GetPassiveImage()
     {
+        if (shotTypes[currentShooterIndex] == null) return null;
         return shotTypes[currentShooterIndex].icon;
     }
 }

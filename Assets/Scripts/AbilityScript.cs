@@ -69,7 +69,7 @@ public class AbilityScript : MonoBehaviour
             Debug.Log(abilityType.sound);
             audioSource.clip = abilityType.sound;
             audioSource.loop = abilityType.isLoopingAudio;
-            if(audioSource != null && abilityType.isStaticAbility)
+            if(audioSource != null)
                 audioSource.Play();
             Debug.Log(audioSource.clip);
         }
@@ -81,7 +81,9 @@ public class AbilityScript : MonoBehaviour
         if (ps != null) ps.Play();
         //* Disable the sprite renderer
         if (sr != null) sr.enabled = false;
-
+        //* Play Baby Sound
+        if (abilityType.babySound != null)
+            SoundFXManagerScript.instance.PlaySFXSound(abilityType.babySound, transform);
         //* Stops the projectile's movement.
         rb.linearVelocity = Vector2.zero;
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;

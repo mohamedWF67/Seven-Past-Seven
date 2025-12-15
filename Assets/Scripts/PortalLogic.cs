@@ -26,6 +26,10 @@ public class PortalLogic : MonoBehaviour
     private InputAction portalInput;
     public Coroutine teleportingCoroutine;
     [SerializeField]bool isCoroutineRunning;
+    [Header("Sounds")]
+    [SerializeField] AudioClip doorUnlockClip;
+    [SerializeField] AudioClip doorOpenClip;
+    [SerializeField] AudioClip doorCloseClip;
     
     private void Start()
     {
@@ -43,6 +47,7 @@ public class PortalLogic : MonoBehaviour
             destinationPortal.gameObject.GetComponent<PortalLogic>().isUnlocked = true;
             Debug.Log("Door Unlocked");
             NotificationTextScript.instance.ShowNotification("Door Unlocked" + "\n" + "Press W or R3 to Teleport");
+            SoundFXManagerScript.instance.PlaySFXSound(doorUnlockClip, transform);
         }
         
         //* Prevents the player from teleporting infinitely.
@@ -98,7 +103,9 @@ public class PortalLogic : MonoBehaviour
         FullScreenEffectScript.instance.Blink();
         if (destinationPortal.TryGetComponent(out PortalLogic portal))
             portal.isCoroutineRunning = true;
+        SoundFXManagerScript.instance.PlaySFXSound(doorOpenClip, transform);
         yield return new WaitForSeconds(FullScreenEffectScript.instance.blinkTime);
+        SoundFXManagerScript.instance.PlaySFXSound(doorCloseClip, transform);
         //* Adds the player to the other portal's set.
         portal.portalObjects.Add(other.gameObject);
         portal.player = player;
