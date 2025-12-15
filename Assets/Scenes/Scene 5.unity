@@ -2459,7 +2459,7 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 849724188853843549, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
-      propertyPath: 'actData.Array.data[2]'
+      propertyPath: actData.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: c0d43916b4e960846adc365c90d9b827, type: 2}
     - target: {fileID: 2682918606046047797, guid: 7bf36625333b1ee4ca9794fc4adfca78, type: 3}
@@ -2604,7 +2604,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
-      propertyPath: 'lines.Array.data[2]'
+      propertyPath: lines.Array.data[2]
       value: 'AIRA (GHOST): Now hurry Clouden is still trapped in Mass-com. Go save
         him using Echo''s abilities. '
       objectReference: {fileID: 0}
