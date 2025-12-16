@@ -48,7 +48,7 @@ public class ShootingScript : MonoBehaviour
     AudioSource audioSource;
     private bool soundPlaying;
 
-    private AudioMixer mixer;
+    [SerializeField]private AudioMixerGroup mixerGroup;
     
     private void Awake()
     {
@@ -59,7 +59,6 @@ public class ShootingScript : MonoBehaviour
         shootAbility = pi.actions.FindAction("ShootAbility");
         switchAbility = pi.actions.FindAction("SwitchAbility");
         audioSource = GetComponent<AudioSource>();
-        mixer = Resources.Load<AudioMixer>("Audio/MainMixer");
     }
 
     private void OnValidate()
@@ -126,7 +125,9 @@ public class ShootingScript : MonoBehaviour
 
         Vector3 dir = transform.right;
         
-        bullet.AddComponent<AudioSource>().playOnAwake = false;
+        AudioSource au = bullet.AddComponent<AudioSource>();
+        au.playOnAwake = false;
+        au.outputAudioMixerGroup = mixerGroup;
         var ability = bullet.AddComponent<AbilityScript>();
         ability.abilityType = ULTs[currentShooterIndex];
 

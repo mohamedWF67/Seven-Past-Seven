@@ -5487,9 +5487,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: c2bb8c232e7690a409ffba475329b91e, type: 2}
   - {fileID: 11400000, guid: 0d84c958601e9de4dae41b413dcddd2b, type: 2}
+  switchAbilityHalal: 0
   currentShooter: 4
   abilityCooldown: 1
   passiveCooldown: 1
+  mixerGroup: {fileID: 3081477358219459916, guid: 2f95aa0109b003b47a62d391d418dad1, type: 2}
 --- !u!82 &3180857073906576414
 AudioSource:
   m_ObjectHideFlags: 0
