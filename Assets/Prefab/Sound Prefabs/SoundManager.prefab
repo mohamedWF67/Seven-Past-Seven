@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66db5d86d5f4567468f0f5ebaf9345f1, type: 2}
   - {fileID: 11400000, guid: d0c06de74421de3488fe55ee0be3d66a, type: 2}
   - {fileID: 11400000, guid: d0c06de74421de3488fe55ee0be3d66a, type: 2}
+  - {fileID: 11400000, guid: d0c06de74421de3488fe55ee0be3d66a, type: 2}
   backgroundMusic: {fileID: 8300000, guid: eeb8dd55c29115b42b5e53d13752c14a, type: 3}
   soundSFXObject: {fileID: 6116985637374861673, guid: 4ea778cebd9bca24ca1da19dcacaad7b, type: 3}
   soundUIObject: {fileID: 793013955116592020, guid: 6623f9d11f8c44f48b7b9ef2cd5b6d51, type: 3}

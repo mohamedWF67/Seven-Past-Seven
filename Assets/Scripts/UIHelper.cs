@@ -45,6 +45,7 @@ public class UIHelper : MonoBehaviour
         if (!allReferencesSet)
             Awake();
         
+        if (GameManagerScript.instance.isFinalSceneRuning) return;
         UpdateItems();
         UpdateDashPanel();
         UpdateAbilityPanel();

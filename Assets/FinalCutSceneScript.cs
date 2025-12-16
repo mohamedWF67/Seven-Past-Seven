@@ -16,8 +16,22 @@ public class FinalCutSceneScript : MonoBehaviour
     {
         GameManagerScript.instance.isFinalSceneRuning = true;
         maincam = FindFirstObjectByType<CinemachineCamera>();
-        foreach (var thing in ThingsToHide) thing.SetActive(false);
-        foreach (var thing in ThingsToShow) thing.SetActive(true);
+        if (ThingsToHide.Count > 0)
+        { 
+            foreach (var thing in ThingsToHide)
+            {
+                if (thing  != null)
+                {
+                    thing.SetActive(false);   
+                }
+            }
+        }
+
+        if (ThingsToShow.Count > 0)
+        {
+            foreach (var thing in ThingsToShow) thing.SetActive(true);
+        }
+        
         StartCoroutine(FinalScene());
     }
 
@@ -37,8 +51,8 @@ public class FinalCutSceneScript : MonoBehaviour
             i++;
             //SoundFXManagerScript.instance.Play3DSFXSound();
         }
-        ThingsToShow[0].SetActive(false);
-        GameManagerScript.instance.isFinalSceneRuning = false;
+        if(ThingsToShow .Count > 0)
+            ThingsToShow[0].SetActive(false);
         GameManagerScript.instance.GoToNextAct();
     }
 }

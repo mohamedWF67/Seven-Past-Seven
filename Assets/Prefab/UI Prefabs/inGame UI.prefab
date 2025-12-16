@@ -5020,16 +5020,17 @@ MonoBehaviour:
   - {fileID: 102900000, guid: 9baba81a19536e645a6823920d43bf24, type: 3}
   - {fileID: 102900000, guid: 98c3217f144185e429511e6b9970fa87, type: 3}
   - {fileID: 102900000, guid: bce9debf55f82764e913adefc74e046c, type: 3}
+  - {fileID: 102900000, guid: 0b8b9190d90c8de439346294e6cd5d26, type: 3}
   scoreText: {fileID: 6509968588578718793}
-  initialScore: 5000
+  initialScore: 15000
   score: 0
-  scaleFactor: 0.75
-  timeFactor: 60
+  scaleFactor: 0.9
+  timeFactor: 120
   currentTime: 0
   scoreMultiplier: 100
   extraScore: 0
-  extraScaleFactor: 0.5
-  extraTimeFactor: 120
+  extraScaleFactor: 0.9
+  extraTimeFactor: 240
   totalScore: 0
   keyCount: 0
   artifactCount: 0
@@ -8491,7 +8492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2080440546571199364, guid: 5c2bf26f564edd04db46230f44e5b25c, type: 3}
+  m_Sprite: {fileID: 7383082598571809250, guid: 703799d692edec54caa67d322094b43f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

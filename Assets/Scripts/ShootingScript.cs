@@ -180,6 +180,7 @@ public class ShootingScript : MonoBehaviour
         if (!shotTypes[currentShooterIndex].isLoopingAudio)
         {
             AudioSource au = bullet.AddComponent<AudioSource>(); 
+            au.outputAudioMixerGroup = mixerGroup;
             au.playOnAwake = true; 
             au.clip = shotTypes[currentShooterIndex].sound; 
             au.spatialBlend = 1;
