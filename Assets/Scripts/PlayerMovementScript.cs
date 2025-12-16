@@ -289,6 +289,8 @@ public class PlayerMovementScript : MonoBehaviour
     #region UPDATE
     void Update()
     {
+        if (GameManagerScript.instance.isFinalSceneRuning) return;
+        
         updateActions();
         checkCollisions();
         if (canMove && !GameManagerScript.instance.inUI)
@@ -451,6 +453,7 @@ public class PlayerMovementScript : MonoBehaviour
    
     void FixedUpdate()
     {
+        if (GameManagerScript.instance.isFinalSceneRuning) return;
         if (canMove && !GameManagerScript.instance.inUI)
             dash();
         run();

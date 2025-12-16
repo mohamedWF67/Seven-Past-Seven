@@ -69,6 +69,7 @@ public class AbilityScript : MonoBehaviour
             Debug.Log(abilityType.sound);
             audioSource.clip = abilityType.sound;
             audioSource.loop = abilityType.isLoopingAudio;
+            
             if(audioSource != null)
                 audioSource.Play();
             Debug.Log(audioSource.clip);

@@ -52,6 +52,7 @@ public class ACT_Setter : MonoBehaviour
     {
         ss.ChangeShooter(actData[currentActIndex].CurrentAbilityStack);
         ss.canFire = actData[currentActIndex].canFire;
+        ss.switchAbilityHalal = actData[currentActIndex].switchAbilityHalal;
         pms.canDash = actData[currentActIndex].canDash;
         pms.extraAirJumps = actData[currentActIndex].canDoubleJump ? 1 : 0;
         

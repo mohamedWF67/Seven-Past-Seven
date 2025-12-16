@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Blazz bomb
   m_EditorClassIdentifier: 
   force: 10
-  damage: 15
+  damage: 300
   range: 4
-  cooldown: 1
+  cooldown: 10
   duration: 1.5
   delayTime: 1.5
   isStaticAbility: 0

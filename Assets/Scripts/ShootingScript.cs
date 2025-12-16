@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -20,7 +21,10 @@ public class ShootingScript : MonoBehaviour
     public List<ShotType> shotTypes;
     public List<AbilityType> ULTs;
     private Vector2 aimInput;
+    private InputAction shootAbility;
+    
     private InputAction switchAbility;
+    public bool switchAbilityHalal;
     
     public enum Shooter
     {
@@ -43,6 +47,8 @@ public class ShootingScript : MonoBehaviour
 
     AudioSource audioSource;
     private bool soundPlaying;
+
+    private AudioMixer mixer;
     
     private void Awake()
     {
@@ -50,8 +56,10 @@ public class ShootingScript : MonoBehaviour
         cam = Camera.main;
         ia = pi.actions.FindAction("Attack");
         lookAction = pi.actions.FindAction("Look");
+        shootAbility = pi.actions.FindAction("ShootAbility");
         switchAbility = pi.actions.FindAction("SwitchAbility");
         audioSource = GetComponent<AudioSource>();
+        mixer = Resources.Load<AudioMixer>("Audio/MainMixer");
     }
 
     private void OnValidate()
@@ -72,8 +80,13 @@ public class ShootingScript : MonoBehaviour
     private void ActionChecks()
     {
         if (!canFire) return;
+
+        if (switchAbility.triggered)
+        {
+            IncrementShooter();
+        }
         
-        if (switchAbility.triggered && abilityCoroutine == null && ULTs[currentShooterIndex] != null)
+        if (shootAbility.triggered && abilityCoroutine == null && ULTs[currentShooterIndex] != null)
         {
             abilityCoroutine = StartCoroutine(PerformAbility());
         }
@@ -226,12 +239,15 @@ public class ShootingScript : MonoBehaviour
     public void ChangeShooter(Shooter shooter)
     {
         currentShooter = shooter;
-        if(abilityCoroutine != null)
-            StopCoroutine(abilityCoroutine);
-        if(firingCoroutine != null)
-            StopCoroutine(firingCoroutine);
-        abilityCoroutine = null;
-        firingCoroutine = null;
+        if (!switchAbilityHalal)
+        {
+            if(abilityCoroutine != null)
+                StopCoroutine(abilityCoroutine);
+            if(firingCoroutine != null)
+                StopCoroutine(firingCoroutine);
+            abilityCoroutine = null;
+            firingCoroutine = null;
+        }
         UpdateSounds();
     }
 
@@ -259,5 +275,16 @@ public class ShootingScript : MonoBehaviour
     {
         if (shotTypes[currentShooterIndex] == null) return null;
         return shotTypes[currentShooterIndex].icon;
+    }
+
+    void IncrementShooter()
+    {
+        int nextShooter = currentShooterIndex + 1;
+        if (nextShooter == 3)
+        {
+            nextShooter++;
+        }
+        if (nextShooter >= shotTypes.Count) nextShooter = 0;
+        ChangeShooter((Shooter)nextShooter);
     }
 }

@@ -258,6 +258,7 @@ public class HealthSystem : MonoBehaviour
         Debug.Log("Die");
         if (isPlayer)
         {
+            GameManagerScript.instance.LowerScore(maxHealth * maxHearts / 2);
             SoundFXManagerScript.instance.PlaySFXSound(playerDeathSound, transform);
             StartCoroutine(RespawnPlayer());
         }else

@@ -13,4 +13,6 @@ public class ACT_Data : ScriptableObject
     public bool canDash;
     public bool canDoubleJump;
     public bool canWallJump;
+
+    public bool switchAbilityHalal;
 }

@@ -15,11 +15,11 @@ MonoBehaviour:
   force: 0
   damage: 50
   range: 4
-  cooldown: 1
+  cooldown: 20
   duration: 5
   delayTime: 0
   isStaticAbility: 1
-  tickRate: 0.5
+  tickRate: 0.25
   isSticky: 0
   canDamagePlayer: 0
   canPathThroughWalls: 1

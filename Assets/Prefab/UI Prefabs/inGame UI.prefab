@@ -5019,6 +5019,7 @@ MonoBehaviour:
   - {fileID: 102900000, guid: 56cc33e957b97cb4399ccaa02be9395d, type: 3}
   - {fileID: 102900000, guid: 9baba81a19536e645a6823920d43bf24, type: 3}
   - {fileID: 102900000, guid: 98c3217f144185e429511e6b9970fa87, type: 3}
+  - {fileID: 102900000, guid: bce9debf55f82764e913adefc74e046c, type: 3}
   scoreText: {fileID: 6509968588578718793}
   initialScore: 5000
   score: 0
@@ -5033,6 +5034,7 @@ MonoBehaviour:
   keyCount: 0
   artifactCount: 0
   coinCount: 0
+  isFinalSceneRuning: 0
   inUI: 0
 --- !u!114 &849724188853843549
 MonoBehaviour:
@@ -5054,6 +5056,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2730c0daf1244b047bcc2cab29c6db37, type: 2}
   - {fileID: 11400000, guid: 955561d5da95ce745b94a9178dfe09f8, type: 2}
   - {fileID: 11400000, guid: b4318795ff9f1954dac60f1b5b10ffdc, type: 2}
+  - {fileID: 11400000, guid: c14f7ee1d0cdda44c8ce72bf0fca9cda, type: 2}
   currentActIndex: -1
   abilityGainedSound: {fileID: 8300000, guid: 788a1bcde8bc4244b928130c5e30053a, type: 3}
 --- !u!114 &2020275532559864279

@@ -15,7 +15,7 @@ MonoBehaviour:
   force: 0
   damage: 25
   range: 4
-  cooldown: 1
+  cooldown: 8
   duration: 5
   delayTime: 0
   isStaticAbility: 1
@@ -25,6 +25,8 @@ MonoBehaviour:
   canPathThroughWalls: 0
   Intenisty: 1
   delayffect: 0.5
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: e9c38ad3f3469204dafa3704335d631e, type: 3}
+  babySound: {fileID: 0}
+  isLoopingAudio: 1
   icon: {fileID: 8653660864094885731, guid: 07d4926ed88a1224d8ceaedc2d7ce2bf, type: 3}
   Effect: {fileID: 731191079139364710, guid: e07bd3c9dda7fa44e97c761db264eb69, type: 3}

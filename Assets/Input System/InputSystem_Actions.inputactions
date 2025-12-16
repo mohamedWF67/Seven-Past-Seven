@@ -115,7 +115,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchAbility",
+                    "name": "ShootAbility",
                     "type": "Button",
                     "id": "70a39b78-68af-4bda-8a5a-207eba28e604",
                     "expectedControlType": "",
@@ -145,6 +145,15 @@
                     "name": "Exit",
                     "type": "Button",
                     "id": "c7a4ffb5-014a-406a-bdf2-af6e8ca8d29b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchAbility",
+                    "type": "Button",
+                    "id": "163818c4-7f9f-4045-bd14-04d460d36a1d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -610,7 +619,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "SwitchAbility",
+                    "action": "ShootAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -621,7 +630,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "SwitchAbility",
+                    "action": "ShootAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -688,6 +697,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7005468b-9112-489d-a111-32face5ffa94",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchAbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e5913d1-33c8-46d6-9ca8-bc7f96ddb9e4",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

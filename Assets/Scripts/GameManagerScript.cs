@@ -57,6 +57,11 @@ public class GameManagerScript : MonoBehaviour
     private string currentControlScheme;
 
     #endregion
+
+    #region FINAL SCENE CONTROLS
+
+    [Header("Final Scene")] public bool isFinalSceneRuning;
+    #endregion
     
     [HideInInspector] public bool inUI;
     
@@ -93,6 +98,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void Update()
     {
+        if (isFinalSceneRuning) return;
         //* pauses the game on pressing the pause button.
         if (pauseAction.triggered) PauseGame();
         //* Updates the score.
@@ -211,7 +217,13 @@ public class GameManagerScript : MonoBehaviour
         //* Adds the said score to the extra score.
         extraScore += tempScore;
         Debug.Log($"Extra Score: {extraScore} and Temp Score: {tempScore}");
-    }  
+    }
+
+    public void LowerScore(int amount = 100)
+    {
+        if (initialScore - amount < 2000) return;
+        initialScore -= amount;
+    }
     #endregion
     
     private void OnControlsChanged(PlayerInput obj)

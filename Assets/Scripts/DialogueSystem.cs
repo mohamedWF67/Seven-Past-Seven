@@ -21,6 +21,8 @@ public class DialogueSystem : MonoBehaviour
     
     [SerializeField] private bool isActMover;
     [SerializeField] private bool isMandatory;
+    [SerializeField] private bool isFinalBossAct;
+    [SerializeField] private bool isFinalFinalScene;
     
     private InputAction skipBtn;
     private InputAction escapeBtn;
@@ -77,6 +79,17 @@ public class DialogueSystem : MonoBehaviour
 
     void onDialogueFinish()
     {
+        if (isFinalFinalScene)
+        {
+            
+        }
+        
+        if (isFinalBossAct)
+        {
+            GetComponent<FinalCutSceneScript>().StartScene();
+            return;
+        }
+        
         if (isActMover) ACT_Setter.instance.NextAct();
     }
     
