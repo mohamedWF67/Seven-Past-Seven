@@ -363,67 +363,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6476041778766707621, guid: 36431ce7f7bdf764f97c942a1be82348, type: 3}
   m_PrefabInstance: {fileID: 143929799}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &253426235
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 205245647432339491, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_Name
-      value: pinkie_slime (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6806221778156375504, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: objectToDrop
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -89.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.671
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
 --- !u!1 &260003662
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,11 +432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -107.98
+      value: -151.74
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.63
+      value: -15.91
       objectReference: {fileID: 0}
     - target: {fileID: 7963585329679908704, guid: 9906a71420f52d04b94e1b6cc544624e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3082,9 +3021,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: lines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: 'AIRA (GHOST): You did it, No.7. All six spirits are safe.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: 'lines.Array.data[1]'
+      value: "No.7: Yeah\u2026 it\u2019s finally done. Is everyone at the library?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
       propertyPath: 'lines.Array.data[2]'
-      value: 'AIRA (GHOST): Now hurry Clouden is still trapped in Mass-com. Go save
-        him using Echo''s abilities. '
+      value: "AIRA (GHOST): They\u2019re waiting for you. Echo is loud, Clouden is
+        chilling, Blazzy is detonating something, Racci is sprinting in circles and
+        Mallow\u2026 is very excited."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: 'lines.Array.data[3]'
+      value: 'No.7: Sounds about right.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: 'lines.Array.data[4]'
+      value: 'Aira: Go to them, no.7. The moment you all gather, the truth will reveal
+        itself and your final trial will begin.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845749411226706, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
+      propertyPath: 'lines.Array.data[5]'
+      value: "Aira: Hurry. We don\u2019t have much time left."
       objectReference: {fileID: 0}
     - target: {fileID: 1886751661729878620, guid: 4e2cb1a7de7a7ed4795b0d36aea1274d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -128906,11 +128871,11 @@ PrefabInstance:
       objectReference: {fileID: 2596552556267567030, guid: 7fc972343ff2508478346dfe04f90376, type: 3}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -107.98
+      value: -151.74
       objectReference: {fileID: 0}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.63
+      value: -15.91
       objectReference: {fileID: 0}
     - target: {fileID: 9180366190762355895, guid: e862b63e4d407e54f988d4714bca0ccd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -129924,12 +129889,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
       propertyPath: lines.Array.size
-      value: 4
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: 'No.7: MALLOW!!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[1]'
+      value: "Mallow: No.7\u2026? Is that really you?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[2]'
+      value: "No.7: Yeah. I\u2019m here. You\u2019re safe now."
       objectReference: {fileID: 0}
     - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
       propertyPath: 'lines.Array.data[3]'
-      value: 'AIRA (GHOST): Now hurry Clouden is still trapped in Mass-com. Go save
-        him using Echo''s abilities. '
+      value: "Mallow: (voice trembling) I\u2026 I didn\u2019t know what was happening.
+        Everything kept changing around me. The rooms, the floors, the sounds. I
+        tried to stay calm, but every time I did\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[4]'
+      value: "No.7: You don\u2019t have to face it alone anymore. We\u2019re all
+        gathering at the library. Aira, Echo, Clouden, Blazzy, Racci. Everyone\u2019s
+        waiting for you."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[5]'
+      value: "Mallow: Really?? They\u2019re all okay?? Oh THANK GOD. I was worried
+        something awful happened! Do you need anything?? Are you hungry?? Do you
+        want a marshmallow??"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[6]'
+      value: 'No.7: Yes, of course.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[7]'
+      value: 'Mallow:  WOW IT WORKED!! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[8]'
+      value: "No.7: I feel\u2026 lighter. Warmer. Kinder."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[9]'
+      value: "Mallow: That\u2019s the marshmallow magic! It\u2019s soft, but it crushes
+        ANYTHING if you throw it hard enough. That's why they are my favorite!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[10]'
+      value: "No.7: Good. I still need the artifact. There\u2019s a stronger enemy
+        deeper in the building."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[11]'
+      value: "Mallow: Okay okay. You go finish this. The others need me. I\u2019ll
+        meet them at the library. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[12]'
+      value: "No.7: That\u2019s what we do. We save each other."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128889970092709593, guid: c987708a9711333419fd43ed1b510bac, type: 3}
+      propertyPath: 'lines.Array.data[13]'
+      value: 'Mallow: Okay then! SEE YOUUUUUU'
       objectReference: {fileID: 0}
     - target: {fileID: 1863305843791584819, guid: c987708a9711333419fd43ed1b510bac, type: 3}
       propertyPath: m_Name
@@ -129980,63 +130005,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c987708a9711333419fd43ed1b510bac, type: 3}
---- !u!1001 &8278939959282594337
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 205245647432339491, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_Name
-      value: pinkie_slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -96.266
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.671
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310924340979153409, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0171d5d57b58fd0469c9b6e66d443956, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -130057,5 +130025,3 @@ SceneRoots:
   - {fileID: 2121152073}
   - {fileID: 1805605075}
   - {fileID: 1310646427195359389}
-  - {fileID: 8278939959282594337}
-  - {fileID: 253426235}
