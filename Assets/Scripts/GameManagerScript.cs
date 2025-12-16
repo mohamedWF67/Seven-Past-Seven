@@ -23,7 +23,11 @@ public class GameManagerScript : MonoBehaviour
     [Header("Act")]
     [SerializeField] GameObject actFinishedUI;
     public int currentSceneIndex;
+    #if UNITY_EDITOR
     [SerializeField] private List<SceneAsset> scenes;
+    #endif
+    [SerializeField, HideInInspector]
+    private List<string> sceneName;
     Coroutine loadNextActCoroutine;
     #endregion
     
@@ -64,6 +68,17 @@ public class GameManagerScript : MonoBehaviour
     #endregion
     
     [HideInInspector] public bool inUI;
+    
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        sceneName = new List<string>();
+        foreach (var scene in scenes)
+        {
+            sceneName.Add(scene.name);
+        }
+    }
+    #endif
     
     private void Awake()
     {
@@ -158,7 +173,7 @@ public class GameManagerScript : MonoBehaviour
         //* Disable the act finish ui.
         actFinishedUI.SetActive(false);
         //* Load next scene.
-        SceneManager.LoadScene(scenes[currentSceneIndex + 1].name);
+        SceneManager.LoadScene(sceneName[currentSceneIndex + 1]);
         currentSceneIndex++;
         
         loadNextActCoroutine = null;

@@ -30,6 +30,8 @@ public class UIHelper : MonoBehaviour
     
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI scoreText;
+
+    [SerializeField] private Sprite nullImage;
     
     bool allReferencesSet => ss != null && pms != null;
     
@@ -83,16 +85,11 @@ public class UIHelper : MonoBehaviour
         abilityImage.GetComponent<Image>().fillAmount = abilityCooldown;
         passiveImage.GetComponent<Image>().fillAmount = passiveCooldown;
 
-        if (ss.GetAbilityImage() == null && abilityIcon.gameObject.activeSelf)
-        {
-            abilityIcon.gameObject.SetActive(false);
-        }
+        if (ss.GetAbilityImage() == null)
+            abilityIcon.sprite = nullImage;
         else
-        {
-            if (!abilityIcon.gameObject.activeSelf)
-                abilityIcon.gameObject.SetActive(true);
             abilityIcon.sprite = ss.GetAbilityImage();
-        }
+        
         passiveIcon.sprite = ss.GetPassiveImage();
         
         if (abilityCooldown >= 1f)

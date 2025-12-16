@@ -5021,6 +5021,16 @@ MonoBehaviour:
   - {fileID: 102900000, guid: 98c3217f144185e429511e6b9970fa87, type: 3}
   - {fileID: 102900000, guid: bce9debf55f82764e913adefc74e046c, type: 3}
   - {fileID: 102900000, guid: 0b8b9190d90c8de439346294e6cd5d26, type: 3}
+  sceneName:
+  - Scene 1
+  - Scene 2
+  - Scene 3
+  - Scene 4
+  - Scene 5
+  - Scene 6
+  - Scene 7
+  - Scene 8
+  - FinalFinalScene
   scoreText: {fileID: 6509968588578718793}
   initialScore: 15000
   score: 0
@@ -5119,6 +5129,7 @@ MonoBehaviour:
   passiveIcon: {fileID: 8492568766997694001}
   ss: {fileID: 0}
   scoreText: {fileID: 7951805180903041194}
+  nullImage: {fileID: 7383082598571809250, guid: 703799d692edec54caa67d322094b43f, type: 3}
 --- !u!1 &3277858495001257727
 GameObject:
   m_ObjectHideFlags: 0

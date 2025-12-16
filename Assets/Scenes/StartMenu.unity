@@ -3496,7 +3496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 780951801}
-  sceneToLoad: {fileID: 102900000, guid: 32cc83c4a110c3143bc90943858821cc, type: 3}
+  nextScene: {fileID: 102900000, guid: 32cc83c4a110c3143bc90943858821cc, type: 3}
+  sceneName: CutsceneONE
 --- !u!114 &1487862675
 MonoBehaviour:
   m_ObjectHideFlags: 0

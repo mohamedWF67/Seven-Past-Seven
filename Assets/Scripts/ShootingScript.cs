@@ -59,6 +59,7 @@ public class ShootingScript : MonoBehaviour
         shootAbility = pi.actions.FindAction("ShootAbility");
         switchAbility = pi.actions.FindAction("SwitchAbility");
         audioSource = GetComponent<AudioSource>();
+        UpdateSounds();
     }
 
     private void OnValidate()

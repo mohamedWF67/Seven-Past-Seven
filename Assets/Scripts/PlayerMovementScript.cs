@@ -251,6 +251,16 @@ public class PlayerMovementScript : MonoBehaviour
     {
         startComponents();
         startInputActions();
+        
+        runAccelAmount = (50 * runAcceleration) / runMaxSpeed;
+        runDecelAmount = (50 * runDeceleration) / runMaxSpeed;
+        
+        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, runMaxSpeed);
+        runDeceleration = Mathf.Clamp(runDeceleration, 0.01f, runMaxSpeed);
+        
+        fallLimit = Mathf.Abs(fallLimit);
+        if (rb != null) 
+            timeToApex = TimeToApexFromHeight(jumpHeight, rb); //* Stores time to apex.
     }
     
     #endregion

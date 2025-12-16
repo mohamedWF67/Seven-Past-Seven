@@ -36,6 +36,8 @@ public class FallingTrap : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerMask = LayerMask.GetMask("Player");
         //* Changes the fall speed of the trap by changing the mass and gravity of the rigidbody.
+        float g = Mathf.Abs(Physics2D.gravity.y) * rb.gravityScale;
+        destroyDelay = Mathf.Sqrt(2f * maxDistance / g);
         rb.mass = fallingMass;
         rb.gravityScale = fallingGravityScale;
     }

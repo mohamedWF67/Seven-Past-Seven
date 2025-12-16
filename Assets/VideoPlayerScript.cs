@@ -8,15 +8,29 @@ public class VideoPlayerScript : MonoBehaviour
 
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] GameObject pausePanel;
+    
+    #if UNITY_EDITOR
     [SerializeField] SceneAsset nextScene;
+    #endif
+    [SerializeField, HideInInspector]
+    private string sceneName;
 
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (nextScene != null)
+            sceneName = nextScene.name;
+    }
+    #endif
+
+    
     public void Skip()
     {
         if (videoPlayer == null) return;
 
         videoPlayer.Stop();
         
-        SceneManager.LoadScene(nextScene.name);
+        SceneManager.LoadScene(sceneName);
     }
     
     public void TogglePause()
@@ -40,6 +54,10 @@ public class VideoPlayerScript : MonoBehaviour
             TogglePause();
         if (Input.GetKeyDown(KeyCode.Return))
             Skip();
+        if (videoPlayer.isPlaying && videoPlayer.time >= videoPlayer.length)
+        {
+            Skip();
+        }
     }
     
 }
