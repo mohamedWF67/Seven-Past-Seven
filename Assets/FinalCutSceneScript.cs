@@ -38,7 +38,6 @@ public class FinalCutSceneScript : MonoBehaviour
             //SoundFXManagerScript.instance.Play3DSFXSound();
         }
         ThingsToShow[0].SetActive(false);
-        
         GameManagerScript.instance.isFinalSceneRuning = false;
         GameManagerScript.instance.GoToNextAct();
     }

@@ -70125,6 +70125,18 @@ PrefabInstance:
       propertyPath: isFinalBossAct
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1917373951520957002, guid: b2c41c74285c9cd488523e4ea9cc6ad3, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917373951520957002, guid: b2c41c74285c9cd488523e4ea9cc6ad3, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: 'The Friend Group: You did i !!!.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917373951520957002, guid: b2c41c74285c9cd488523e4ea9cc6ad3, type: 3}
+      propertyPath: 'lines.Array.data[1]'
+      value: 'NO.7: now we can all go back to out world'
+      objectReference: {fileID: 0}
     - target: {fileID: 5035208777491000498, guid: b2c41c74285c9cd488523e4ea9cc6ad3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2

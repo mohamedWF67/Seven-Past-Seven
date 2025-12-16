@@ -81,7 +81,8 @@ public class DialogueSystem : MonoBehaviour
     {
         if (isFinalFinalScene)
         {
-            
+            GetComponent<FinalFinalSceneScript>().ShowFinalFinalPanel();
+            return;
         }
         
         if (isFinalBossAct)
