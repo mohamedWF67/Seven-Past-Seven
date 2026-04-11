@@ -90,7 +90,7 @@ The game is actively being developed with regular updates. Check the commit hist
 
 ## License
 
-This project is licensed under the terms included in the LICENSE file.
+This project is licensed under the terms included in the [LICENSE](LICENSE) file.
 
 ## Version History
 
