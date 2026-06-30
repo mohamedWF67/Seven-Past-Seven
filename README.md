@@ -69,6 +69,8 @@ Assets/
    ```
 2. Open the project in Unity
 3. Load a scene from the Acts to start playing
+### Installation
+1. Install using the [Installer](https://github.com/mohamedWF67/Seven-Past-Seven/releases/download/V0.1/Seven_Past_Seven_x86.msi) inside the releases 
 
 ### Controls
 - **Movement**: Arrow Keys/WASD
