@@ -24,7 +24,7 @@ public class ShootingScript : MonoBehaviour
     private InputAction shootAbility;
     
     private InputAction switchAbility;
-    public bool switchAbilityHalal;
+    public bool switchAbilityHalal = false;
     
     public enum Shooter
     {
@@ -81,7 +81,7 @@ public class ShootingScript : MonoBehaviour
     {
         if (!canFire) return;
 
-        if (switchAbility.triggered)
+        if (switchAbility.triggered && switchAbilityHalal)
         {
             IncrementShooter();
         }
@@ -251,7 +251,6 @@ public class ShootingScript : MonoBehaviour
             abilityCoroutine = null;
             firingCoroutine = null;
         }
-        UpdateSounds();
     }
 
     public int GetDamage()

@@ -59,7 +59,12 @@ public class ACT_Setter : MonoBehaviour
         hs.RefreshHealth(actData[currentActIndex].maxHealth,actData[currentActIndex].maxHearts,actData[currentActIndex].enduranceModifier);
 
         if (currentActIndex == 0) return;
-        NotificationTextScript.instance.ShowNotification($"You have acquired {actData[currentActIndex].CurrentAbilityStack}'s abilities.");
+        if (currentActIndex == actData.Count - 1)
+        {
+            Debug.Log("Switch halal");
+            NotificationTextScript.instance.ShowNotification($"You now use any ability you want. \n Switch using Q or Right D-Pad");
+        }else
+            NotificationTextScript.instance.ShowNotification($"You have acquired {actData[currentActIndex].CurrentAbilityStack}'s abilities.");
         if(abilityGainedSound != null)
             SoundFXManagerScript.instance.PlaySFXSound(abilityGainedSound, transform);
     }

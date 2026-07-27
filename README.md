@@ -65,7 +65,7 @@ Assets/
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Seven-Past-Seven.git
+   git clone https://github.com/mohamedWF67/Seven-Past-Seven.git
    ```
 2. Open the project in Unity
 3. Load a scene from the Acts to start playing
@@ -92,7 +92,7 @@ The game is actively being developed with regular updates. Check the commit hist
 
 ## License
 
-This project is licensed under the terms included in the [LICENSE](LICENSE) file.
+This project is licensed under the terms included in the LICENSE file.
 
 ## Version History
 

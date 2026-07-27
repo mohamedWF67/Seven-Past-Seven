@@ -247,4 +247,16 @@ public class GameManagerScript : MonoBehaviour
         currentControlScheme = obj.currentControlScheme;
         Debug.Log("Current Input Scheme: " + currentControlScheme);
     }
+
+    #region FINAL SCENE Triggers
+
+    public void GoToMainMenu()
+    {
+        currentSceneIndex = -1;
+        SceneManager.LoadScene("StartMenu");
+        Destroy(gameObject);
+        Destroy(SoundFXManagerScript.instance.gameObject);
+    }
+
+    #endregion
 }

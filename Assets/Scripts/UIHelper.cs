@@ -86,9 +86,15 @@ public class UIHelper : MonoBehaviour
         passiveImage.GetComponent<Image>().fillAmount = passiveCooldown;
 
         if (ss.GetAbilityImage() == null)
+        {
             abilityIcon.sprite = nullImage;
+            abilityImage.SetActive(false);
+        }
         else
+        {
+            abilityImage.SetActive(true);
             abilityIcon.sprite = ss.GetAbilityImage();
+        }
         
         passiveIcon.sprite = ss.GetPassiveImage();
         

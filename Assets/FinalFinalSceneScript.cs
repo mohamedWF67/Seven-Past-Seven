@@ -28,4 +28,22 @@ public class FinalFinalSceneScript : MonoBehaviour
             Application.Quit();
         }
     }
+    
+    public void QuitGame()
+    {
+        if (gameFinished)
+        {
+            Debug.Log("Quitting game...");
+            Application.Quit();   
+        }
+    }
+
+    public void MainMenu()
+    {
+        if (gameFinished)
+        {
+            Debug.Log("Going to main menu...");
+            GameManagerScript.instance.GoToMainMenu();
+        }
+    }
 }
